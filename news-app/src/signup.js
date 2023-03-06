@@ -1,6 +1,7 @@
 
 import React from 'react';
 import "./signup.css";
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 // Define a custom component for the sign up form
 function Signup() {
@@ -10,8 +11,11 @@ function Signup() {
   const [confirmPassword, setConfirmPassword] = React.useState('');
   const [errors, setErrors] = React.useState({});
 
+  // set loggedIn to true in local storage
+  window.localStorage.setItem('loggedIn', true);
+
   // Use React hook to access the history object for navigation
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   // Define a function to handle the form submission
   function handleSubmit(event) {
@@ -21,10 +25,10 @@ function Signup() {
     // Validate the form inputs and set errors if any
     let isValid = true;
     let newErrors = {};
-    
+
 
     // Check if username is empty or less than 8 characters or contains spaces
-    if ( username.length < 8 || username.includes(' ')) {
+    if (username.length < 8 || username.includes(' ')) {
       isValid = false;
       newErrors.username = 'Username must be at least 8 characters long and cannot contain spaces.';
     }
@@ -48,11 +52,18 @@ function Signup() {
     // Set the errors state with the new errors object
     setErrors(newErrors);
 
-    // If the form is valid, navigate to the landing page as signed in
-    if (isValid) {
-      history.push('/landing');
-      // You can also add some logic here to store the user credentials in local storage or call an API to register the user in a database
-    }
+    // post request to the backend with username and password
+    axios
+      .post("http://localhost:5000/api/signup", { username, password })
+      .then((res) => {
+        console.log(res);
+        localStorage.setItem('username', username);
+        localStorage.setItem('loggedIn', true);
+        navigate('/landing', { replace: true });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   // Return the JSX code for rendering the sign up form component

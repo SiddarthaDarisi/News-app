@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./login.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { Link } from "react-router-dom";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -25,9 +24,9 @@ function Login() {
       setError("Username and password are required");
       return;
     }
-     if (!password || password.length < 8 || password.includes(' ') || !/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/[^A-Za-z]/.test(password)) {
+    if (!password || password.length < 8 || password.includes(' ') || !/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/[^A-Za-z]/.test(password)) {
       setError('Password must be at least 8 characters long and cannot contain spaces. It must also contain at least one upper case letter, one lower case letter and one non-letter character.');
-    return;
+      return;
     }
     if (!username || username.length < 8 || username.includes(' ') || !/[A-Z]/.test(username) || !/[a-z]/.test(username) || !/[^A-Za-z]/.test(username)) {
       setError("username mmust be at least 8 characters long and cannot contain spaces. It must also contain at least one upper case letter, one lower case letter and one non-letter character.");
@@ -35,15 +34,13 @@ function Login() {
     }
     // send a post request to the backend with username and password
     axios
-      .post("/api/login", { username, password })
-      .then((res) => {
-        // if successful, redirect to the landing page
-        history.push("/landing");
-      })
-      .catch((err) => {
-        // if error, display the error message
-        setError(err.response.data.message);
-      });
+    .post("http://localhost:5000/api/signup", { username, password })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   };
 
   return (
@@ -75,13 +72,16 @@ function Login() {
             {error}
           </div>
         )}
+       
         <button type="submit" className="btn btn-primary">
           Sign in
         </button>
+        <p>New user?</p>
+        <Link to="/signup" className="btn btn-primary"style={{display:"inline"}}><h3>Signup</h3></Link>
       </form>
-   
+
     </div>
-    
+
   );
 }
 
