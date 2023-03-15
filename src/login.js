@@ -28,7 +28,7 @@ function Login() {
         <div style={{ padding: 100 }}>
 
             <Authenticator>
-                {signedUser && (<Navigate to="/Dashboard" />)}
+                <Navigate to="/Dashboard" />
             </Authenticator>
         </div>// your login form code here
     );

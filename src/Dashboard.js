@@ -2,8 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { Auth, Hub } from "aws-amplify"
 import { Navigate } from 'react-router';
-import { Authenticator } from "aws-amplify"
+
 import { Link } from "react-router-dom";
+import { Authenticator } from '@aws-amplify/ui-react';
 function Dashboard() {
     const [user, setUser] = useState(null);
     useEffect(() => {
@@ -11,23 +12,45 @@ function Dashboard() {
             try {
                 const user = await Auth.currentAuthenticatedUser();
                 setUser(user);
-            } catch (err) { }
+            } catch (err) {
+                console.log("user not found")
+            }
         }
         userDetails();
     }, []);
-    console.log(user.attributes.name)
+    async function signOut() {
+        try {
+            await Auth.signOut({ global: true });
+        } catch (error) {
+            console.log('error signing out: ', error);
+        }
+    }
+    if (user) {
+        console.log(user.attributes.name);
+    } else {
+        console.log("No user found");
+    }
+    !user && <Navigate to="/login" />
+
     return (
+
         <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/Dashboard">News-App</Link>
-                    </li>
-                    <li>
-                        <p>hi,{user.attributes.name}</p>
-                    </li>
-                </ul>
-            </nav>
+            <Authenticator>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/Dashboard">News-App</Link>
+                        </li>
+                        <li>
+                            <p>hi,{user.attributes.name}</p>
+                        </li>
+                        <li>
+                            <button onClick={signOut}>Sign Out</button>
+                        </li>
+
+                    </ul>
+                </nav>
+            </Authenticator>
         </div >
     );
 }
