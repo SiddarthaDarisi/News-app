@@ -1,0 +1,20 @@
+npm install aws-amplify @aws-amplify/ui-react{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyf9e002e8b3634-staging-50203-authRole",
+      "UnauthRoleArn": "arn:aws:iam::506583605432:role/amplify-amplifyf9e002e8b3634-staging-50203-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::506583605432:role/amplify-amplifyf9e002e8b3634-staging-50203-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-amplifyf9e002e8b3634-staging-50203-deployment",
+      "UnauthRoleName": "amplify-amplifyf9e002e8b3634-staging-50203-unauthRole",
+      "StackName": "amplify-amplifyf9e002e8b3634-staging-50203",
+      "StackId": "arn:aws:cloudformation:us-east-1:506583605432:stack/amplify-amplifyf9e002e8b3634-staging-50203/87250a30-c2ee-11ed-bbaa-0a88b80f2a11",
+      "AmplifyAppId": "d2w8ihgdzc6wxl"
+    },
+    "categories": {
+      "auth": {
+        "Newsapp": {}
+      }
+    }
+  }
+}
