@@ -15,7 +15,7 @@ function Dashboard() {
         }
         userDetails();
     }, []);
-
+    console.log(user.attributes.name)
     return (
         <div>
             <nav>
