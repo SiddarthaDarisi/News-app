@@ -42,7 +42,7 @@ function Dashboard() {
                             News-App
                         </Typography>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            Hi,
+                            Hi, {user.attributes.name}
                         </Typography>
                         <Button color="inherit" onClick={signOut}>Sign Out</Button>
                     </Toolbar>
