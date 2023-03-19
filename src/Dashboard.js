@@ -1,10 +1,11 @@
-//navbar news-app on left side and "Hi",username from aws cognito on right side
 import React, { useState, useEffect } from 'react';
 import { Auth, Hub } from "aws-amplify"
 import { Navigate } from 'react-router';
 
 import { Link } from "react-router-dom";
 import { Authenticator } from '@aws-amplify/ui-react';
+import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+
 function Dashboard() {
     const [user, setUser] = useState(null);
     useEffect(() => {
@@ -33,27 +34,22 @@ function Dashboard() {
     !user && <Navigate to="/login" />
 
     return (
-
         <div>
             <Authenticator>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/Dashboard">News-App</Link>
-                        </li>
-                        <li>
-                            <p>hi,{user.attributes.name}</p>
-                        </li>
-                        <li>
-                            <button onClick={signOut}>Sign Out</button>
-                        </li>
-
-                    </ul>
-                </nav>
+                <AppBar position="static">
+                    <Toolbar>
+                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                            News-App
+                        </Typography>
+                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                            Hi, {user.attributes}
+                        </Typography>
+                        <Button color="inherit" onClick={signOut}>Sign Out</Button>
+                    </Toolbar>
+                </AppBar>
             </Authenticator>
-        </div >
+        </div>
     );
 }
-export default (Dashboard);
 
-
+export default Dashboard;
