@@ -16,7 +16,7 @@ Test Case ID-2010:<br>
 |ID-2003|Leela Sahitya|03/26/2023|pass|The components in the settings menu are displayed properly|
 |ID-2004|Leela Sahitya|03/26/2023|pass|The save button is functioning properly|
 |ID-2005|Bhuvan Sai Reddy|03/27/2023|Pass|The page is loading properly|
-|ID-2006|BHuvan Sai Reddy|03/27/2023|Fail|Axios is an external module and that cannot be loaded is in test senario|
+|ID-2006|Bhuvan Sai Reddy|03/27/2023|Fail|Axios is an external module and that cannot be loaded is in test senario|
 |ID-2007|||||
 |ID-2008|||||
 |ID-2009|||||
