@@ -29,8 +29,8 @@ Test Case ID-2017:<br>
 |ID-2009|Thanmai|03/27/2023|fail|sign-in page is required to send a unique integer in the background to authenticate the user|
 |ID-2010|Thanmai|03/27/2023|Pass|sign-up retuns a confirmation message that says that the user is registered|
 |ID-2011|Sri Harsha|03/27/2023|Pass|The length of the program should be 8 characters long|
-|ID-2012|Sri Harsha|03/27/2023|Pass|Check if the password contains any upper case characters|
-|ID-2013|Sri Harsha|03/27/2023|Pass|Check if the password contains any lower case characters|
+|ID-2012|Leela Sahitya|03/27/2023|Pass|Check if the password contains any upper case characters|
+|ID-2013|Leela Sahitya|03/27/2023|Pass|Check if the password contains any lower case characters|
 |ID-2014|||||
 |ID-2015|||||
 |ID-2016|||||
