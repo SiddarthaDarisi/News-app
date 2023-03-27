@@ -14,7 +14,7 @@ Test Case ID-2010:<br>
 |ID-2001|Sri Harsha|03/26/2023|Pass|The changes done to the settings menu are saved|
 |ID-2002|Sri Harsha|03/26/2023|Pass|The cancle button is discarding all the changes done to the settings menu|
 |ID-2003|Leela Sahitya|03/26/2023|pass|The components in the settings menu are displayed properly|
-|ID-2004|Leela Sahitya|03/26/2023|pass|The save button i sfunctioning properly|
+|ID-2004|Leela Sahitya|03/26/2023|pass|The save button is functioning properly|
 |ID-2005|||||
 |ID-2006|||||
 |ID-2007|||||
