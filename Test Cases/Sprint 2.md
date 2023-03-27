@@ -7,7 +7,14 @@ Test Case ID-2006:Testing the mock axios library.(news.test.js)<br>
 Test Case ID-2007:Testing for sign-up (login.test.js)<br>
 Test Case ID-2008:Testing for sign-out (login.test.js)<br>
 Test Case ID-2009:Testing for sign-in (login.test.js)<br>
-Test Case ID-2010:Testing for sign-up confirmation message<br>
+Test Case ID-2010:Testing for sign-up confirmation message (login.test.js)<br>
+Test Case ID-2011:Testing for the length of the password (login.test.js)<br>
+Test Case ID-2012:Testing for upper case characters in the password (Login.test.js)<br>
+Test Case ID-2013:Testing for lower case characters in the password (login.test.js)<br>
+Test Case ID-2014:<br>
+Test Case ID-2015:<br>
+Test Case ID-2016:<br>
+Test Case ID-2017:<br>
 
 | Test Case ID | Name of the Tester |Date| Pass/Fail | comment |
 |---|---|---|---|---|
@@ -21,3 +28,11 @@ Test Case ID-2010:Testing for sign-up confirmation message<br>
 |ID-2008|Thanmai|03/27/2023|Pass|The sign-out button succesfully signs out of the web page|
 |ID-2009|Thanmai|03/27/2023|fail|sign-in page is required to send a unique integer in the background to authenticate the user|
 |ID-2010|Thanmai|03/27/2023|Pass|sign-up retuns a confirmation message that says that the user is registered|
+|ID-2011|Sri Harsha|03/27/2023|Pass|The length of the program should be 8 characters long|
+|ID-2012|Sri Harsha|03/27/2023|Pass|Check if the password contains any upper case characters|
+|ID-2013|Sri Harsha|03/27/2023|Pass|Check if the password contains any lower case characters|
+|ID-2014|||||
+|ID-2015|||||
+|ID-2016|||||
+|ID-2017|||||
+
