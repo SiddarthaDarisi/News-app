@@ -11,8 +11,8 @@ Test Case ID-2010:<br>
 
 | Test Case ID | Name of the Tester |Date| Pass/Fail | comment |
 |---|---|---|---|---|
-|ID-2001|||||
-|ID-2002|||||
+|ID-2001|Sri Harsha|03/26/2023|Pass|The changes done to the settings menu are saved|
+|ID-2002|Sri Harsha|03/26/2023|Pass|The cancle button is discarding all the changes done to the settings menu|
 |ID-2003|||||
 |ID-2004|||||
 |ID-2005|||||
