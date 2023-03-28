@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { Auth, Hub } from "aws-amplify"
 import { Navigate } from 'react-router';
+// import { Authenticator } from '@aws-amplify/ui-react';
 import { Authenticator } from '@aws-amplify/ui-react';
-import { withAuthenticator } from '@aws-amplify/ui-react';
+
 function Login() {
 
 
 
     return (
         <div style={{ padding: 100 }}>
-
+            <Authenticator>
 
             <Navigate to="/Dashboard" />
-            {/* </div> </Authenticator> */}
+            {/* </div> */}
+            </Authenticator>
         </div>// your login form code here
     );
 
 }
-export default withAuthenticator(Login);
+export default (Login);
 // import React, { useState } from 'react';
 // import { Auth } from 'aws-amplify';
 // import {
