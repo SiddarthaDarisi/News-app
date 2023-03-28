@@ -9,9 +9,12 @@ import {
     FormGroup,
     FormControlLabel,
 } from '@mui/material';
+import Alert from '@mui/material/Alert';
 
 function Settings({ categories, handleClose, handleSave }) {
     const [selectedCategories, setSelectedCategories] = useState(categories);
+    const [error, setError] = useState(false);
+
     const handleChange = (event) => {
         const { value } = event.target;
         const index = selectedCategories.indexOf(value);
@@ -26,9 +29,14 @@ function Settings({ categories, handleClose, handleSave }) {
     };
 
     const handleSaveClick = () => {
-        handleSave(selectedCategories);
+        if (selectedCategories.length === 0) {
+            setError(true);
+        } else {
+            setError(false);
+            handleSave(selectedCategories);
+        }
     };
-    
+
     return (
         <Dialog open={true} onClose={handleClose}>
             <DialogTitle>Settings</DialogTitle>
@@ -48,6 +56,9 @@ function Settings({ categories, handleClose, handleSave }) {
                         />
                     ))}
                 </FormGroup>
+                {error && (
+                    <Alert severity="warning">Please select at least one category.</Alert>
+                )}
             </DialogContent>
             <DialogActions>
                 <Button onClick={handleClose}>Cancel</Button>
