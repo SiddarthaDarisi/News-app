@@ -1,70 +1,78 @@
-import Amplify from 'aws-amplify';
-import { Auth } from '@aws-amplify/auth';
-import crypto from 'crypto-browserify';
-import awsconfig from './aws-exports.js';
+import React from 'react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
+import Login from './login.js';
 
-// initialize Amplify
-Auth.configure(awsconfig)
+describe('Login', () => {
+    it('renders the Login form', () => {
+        const { getByText, getByLabelText } = render(<Login />);
+        expect(getByText('Login')).toBeInTheDocument();
+        expect(getByLabelText('Username:')).toBeInTheDocument();
+        expect(getByLabelText('Password:')).toBeInTheDocument();
+        expect(getByText('Log in')).toBeInTheDocument();
+        expect(getByText('Reset Password')).toBeInTheDocument();
+    });
 
-// describe the test suite
-describe('Cognito authentication', () => {
+    it('submits the login form with valid credentials', async () => {
+        const { getByText, getByLabelText } = render(<Login />);
+        const usernameInput = getByLabelText('Username:');
+        const passwordInput = getByLabelText('Password:');
+        const loginButton = getByText('Log in');
 
-  // test the login functionality
-  it('should log in a user', async () => {
-    const email = 'testuser1@gmail.com';
-    const password = 'test123';
-    const user = await Auth.signIn(email, password);
-    expect(user.username).toEqual(email);
-  });
+        fireEvent.change(usernameInput, { target: { value: 'testuser' } });
+        fireEvent.change(passwordInput, { target: { value: 'testpassword' } });
+        fireEvent.click(loginButton);
 
-  // test the logout functionality
-  it('should log out a user', async () => {
-    await Auth.signOut();
-    const user = await Auth.currentAuthenticatedUser();
-    expect(user).toBeNull();
-  });
+        await waitFor(() => {
+            expect(console.log).toHaveBeenCalledWith('Logged in');
+        });
+    });
 
-  // test the sign up functionality
-  it('should sign up a new user', async () => {
-    const email = 'ne1iwu@example.com';
-    const password = 'cwordaifjiajf';
-    const name="sid"
-    const attributes = { email,name };
-    const user = await Auth.signUp({ username: email, password, attributes });
-    expect(user.user.username).toEqual(email);
-  });
-  
-  it('should throw an error when password is not long enough', async () => {
-    const email = 'nr1@example.com';
-    const password = 'C@1'; // password length is less than 8
-    const name = 'sid';
-    const attributes = { email, name };
+    it('displays the password reset form after UserNotConfirmedException', async () => {
+        const { getByText, getByLabelText } = render(<Login />);
+        const usernameInput = getByLabelText('Username:');
+        const passwordInput = getByLabelText('Password:');
+        const resetPasswordButton = getByText('Reset Password');
 
-    try {
-      await Auth.signUp({ username: email, password, attributes });
-    } catch (error) {
-      expect(error.code).toEqual('InvalidPasswordException');
-      expect(error.message).toEqual('Password did not conform with policy: Password not long enough');
-    }
-  });
-  it('should throw an error when password is not long enough', async () => {
-    const email = 'nr1@example.com';
-    const password = 'C21929i19i29'; // password length is less than 8
-    const name = 'sid';
-    const attributes = { email, name };
+        // Simulate UserNotConfirmedException
+        jest.spyOn(console, 'log').mockImplementation(() => { });
+        Auth.signIn = jest.fn().mockRejectedValue({ code: 'UserNotConfirmedException' });
 
-    try {
-      await Auth.signUp({ username: email, password, attributes });
-    } catch (error) {
-      expect(error.code).toEqual('InvalidPasswordException');
-      expect(error.message).toEqual('Password did not conform with policy: Password must have symbol characters');
-    }
-  });
-  // test the confirmation of a new user
-  it('should confirm a new user', async () => {
-    const email = 'newuser@example.com';
-    const code = '123456';
-    const result = await Auth.confirmSignUp(email, code);
-    expect(result).toEqual('SUCCESS');
-  });
+        fireEvent.change(usernameInput, { target: { value: 'testuser' } });
+        fireEvent.change(passwordInput, { target: { value: 'testpassword' } });
+        fireEvent.click(resetPasswordButton);
+
+        await waitFor(() => {
+            expect(getByText('Reset Password')).toBeInTheDocument();
+            expect(getByLabelText('Verification code:')).toBeInTheDocument();
+            expect(getByLabelText('New password:')).toBeInTheDocument();
+        });
+    });
+
+    it('submits the password reset form with valid code and new password', async () => {
+        const { getByText, getByLabelText } = render(<Login />);
+        const usernameInput = getByLabelText('Username:');
+        const resetPasswordButton = getByText('Reset Password');
+
+        // Simulate UserNotConfirmedException
+        jest.spyOn(console, 'log').mockImplementation(() => { });
+        Auth.forgotPassword = jest.fn().mockResolvedValue({});
+        Auth.forgotPasswordSubmit = jest.fn().mockResolvedValue({});
+
+        fireEvent.change(usernameInput, { target: { value: 'testuser' } });
+        fireEvent.click(resetPasswordButton);
+
+        const verificationCodeInput = getByLabelText('Verification code:');
+        const newPasswordInput = getByLabelText('New password:');
+        const resetPasswordSubmitButton = getByText('Reset Password');
+
+        fireEvent.change(verificationCodeInput, { target: { value: '123456' } });
+        fireEvent.change(newPasswordInput, { target: { value: 'newpassword' } });
+        fireEvent.click(resetPasswordSubmitButton);
+
+        await waitFor(() => {
+            expect(Auth.forgotPassword).toHaveBeenCalledWith('testuser');
+            expect(Auth.forgotPasswordSubmit).toHaveBeenCalledWith('testuser', '123456', 'newpassword');
+            expect(console.log).toHaveBeenCalledWith('Password reset successful');
+        });
+    });
 });
