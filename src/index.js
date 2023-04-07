@@ -7,14 +7,15 @@ import { Amplify } from 'aws-amplify'
 import config from './aws-exports';
 import { AmplifyProvider } from '@aws-amplify/ui-react'
 import { BrowserRouter } from 'react-router-dom';
+
 Amplify.configure(config);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <AmplifyProvider>
     <BrowserRouter>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+
+      <App />
+
     </BrowserRouter>
   </AmplifyProvider>
 );

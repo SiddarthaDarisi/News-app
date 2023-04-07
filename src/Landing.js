@@ -31,7 +31,7 @@ function Landing() {
                 </ul>
             </nav> */}
             <AppBar position="static">
-                <Toolbar>
+                <Toolbar >
                     <Typography variant="h6" component="div" sx={{ flexGrow: 0 }}>
                         News-App
                     </Typography>
@@ -42,7 +42,9 @@ function Landing() {
                     <Button sx={{ flexGrow: 0 }} color="inherit" onClick={routeChange} >login</Button>
                 </Toolbar>
             </AppBar>
-            <News category="general" />
+            <Box sx={{ paddingTop: "1px" }}>
+                <News category="general" />
+            </Box>
         </div>
 
 

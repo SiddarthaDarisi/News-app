@@ -26,9 +26,15 @@ export default function CreateCategoryInputUpdateForm(props) {
   const initialValues = {
     username: "",
     category: "",
+    createdAt: "",
+    updatedAt: "",
+    owner: "",
   };
   const [username, setUsername] = React.useState(initialValues.username);
   const [category, setCategory] = React.useState(initialValues.category);
+  const [createdAt, setCreatedAt] = React.useState(initialValues.createdAt);
+  const [updatedAt, setUpdatedAt] = React.useState(initialValues.updatedAt);
+  const [owner, setOwner] = React.useState(initialValues.owner);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = createCategoryInputRecord
@@ -36,6 +42,9 @@ export default function CreateCategoryInputUpdateForm(props) {
       : initialValues;
     setUsername(cleanValues.username);
     setCategory(cleanValues.category);
+    setCreatedAt(cleanValues.createdAt);
+    setUpdatedAt(cleanValues.updatedAt);
+    setOwner(cleanValues.owner);
     setErrors({});
   };
   const [createCategoryInputRecord, setCreateCategoryInputRecord] =
@@ -53,6 +62,9 @@ export default function CreateCategoryInputUpdateForm(props) {
   const validations = {
     username: [],
     category: [],
+    createdAt: [],
+    updatedAt: [],
+    owner: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -71,6 +83,23 @@ export default function CreateCategoryInputUpdateForm(props) {
     setErrors((errors) => ({ ...errors, [fieldName]: validationResponse }));
     return validationResponse;
   };
+  const convertToLocal = (date) => {
+    const df = new Intl.DateTimeFormat("default", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      calendar: "iso8601",
+      numberingSystem: "latn",
+      hourCycle: "h23",
+    });
+    const parts = df.formatToParts(date).reduce((acc, part) => {
+      acc[part.type] = part.value;
+      return acc;
+    }, {});
+    return `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}`;
+  };
   return (
     <Grid
       as="form"
@@ -82,6 +111,9 @@ export default function CreateCategoryInputUpdateForm(props) {
         let modelFields = {
           username,
           category,
+          createdAt,
+          updatedAt,
+          owner,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -139,6 +171,9 @@ export default function CreateCategoryInputUpdateForm(props) {
             const modelFields = {
               username: value,
               category,
+              createdAt,
+              updatedAt,
+              owner,
             };
             const result = onChange(modelFields);
             value = result?.username ?? value;
@@ -164,6 +199,9 @@ export default function CreateCategoryInputUpdateForm(props) {
             const modelFields = {
               username,
               category: value,
+              createdAt,
+              updatedAt,
+              owner,
             };
             const result = onChange(modelFields);
             value = result?.category ?? value;
@@ -177,6 +215,94 @@ export default function CreateCategoryInputUpdateForm(props) {
         errorMessage={errors.category?.errorMessage}
         hasError={errors.category?.hasError}
         {...getOverrideProps(overrides, "category")}
+      ></TextField>
+      <TextField
+        label="Created at"
+        isRequired={false}
+        isReadOnly={false}
+        type="datetime-local"
+        value={createdAt && convertToLocal(new Date(createdAt))}
+        onChange={(e) => {
+          let value =
+            e.target.value === "" ? "" : new Date(e.target.value).toISOString();
+          if (onChange) {
+            const modelFields = {
+              username,
+              category,
+              createdAt: value,
+              updatedAt,
+              owner,
+            };
+            const result = onChange(modelFields);
+            value = result?.createdAt ?? value;
+          }
+          if (errors.createdAt?.hasError) {
+            runValidationTasks("createdAt", value);
+          }
+          setCreatedAt(value);
+        }}
+        onBlur={() => runValidationTasks("createdAt", createdAt)}
+        errorMessage={errors.createdAt?.errorMessage}
+        hasError={errors.createdAt?.hasError}
+        {...getOverrideProps(overrides, "createdAt")}
+      ></TextField>
+      <TextField
+        label="Updated at"
+        isRequired={false}
+        isReadOnly={false}
+        type="datetime-local"
+        value={updatedAt && convertToLocal(new Date(updatedAt))}
+        onChange={(e) => {
+          let value =
+            e.target.value === "" ? "" : new Date(e.target.value).toISOString();
+          if (onChange) {
+            const modelFields = {
+              username,
+              category,
+              createdAt,
+              updatedAt: value,
+              owner,
+            };
+            const result = onChange(modelFields);
+            value = result?.updatedAt ?? value;
+          }
+          if (errors.updatedAt?.hasError) {
+            runValidationTasks("updatedAt", value);
+          }
+          setUpdatedAt(value);
+        }}
+        onBlur={() => runValidationTasks("updatedAt", updatedAt)}
+        errorMessage={errors.updatedAt?.errorMessage}
+        hasError={errors.updatedAt?.hasError}
+        {...getOverrideProps(overrides, "updatedAt")}
+      ></TextField>
+      <TextField
+        label="Owner"
+        isRequired={false}
+        isReadOnly={false}
+        value={owner}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              username,
+              category,
+              createdAt,
+              updatedAt,
+              owner: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.owner ?? value;
+          }
+          if (errors.owner?.hasError) {
+            runValidationTasks("owner", value);
+          }
+          setOwner(value);
+        }}
+        onBlur={() => runValidationTasks("owner", owner)}
+        errorMessage={errors.owner?.errorMessage}
+        hasError={errors.owner?.hasError}
+        {...getOverrideProps(overrides, "owner")}
       ></TextField>
       <Flex
         justifyContent="space-between"

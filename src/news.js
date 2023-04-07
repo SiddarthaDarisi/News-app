@@ -5,9 +5,7 @@ function News(props) {
     const [newsData, setNewsData] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        getNewsData();
-    }, [props.category]);
+
 
     async function getNewsData() {
         setLoading(true);
@@ -20,7 +18,9 @@ function News(props) {
             setLoading(false);
         }
     }
-
+    useEffect(() => {
+        getNewsData();
+    }, [props.category]);
     return (
         <Grid container spacing={2}>
             {loading ? (

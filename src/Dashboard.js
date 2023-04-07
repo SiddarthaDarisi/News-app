@@ -16,77 +16,74 @@ import News from './news.js';
 import './Dashboard.css';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Settings from './Setting.js';
-import { Authenticator } from '@aws-amplify/ui-react';
+// import { Authenticator } from '@aws-amplify/ui-react';
 import { Refresh } from '@mui/icons-material';
+import { getCreateCategoryInput } from './graphql/queries';
+import { updateCreateCategoryInput } from './graphql/mutations';
+
 //sjd
 function Dashboard() {
     const [user, setUser] = useState(null);
-    const [categories, setCategories] = useState(['general']);
+    const [categories, setCategories] = useState([]);
     const [showSettings, setShowSettings] = useState(false);
 
     useEffect(() => {
         async function userDetails() {
             try {
+
+
                 const user = await Auth.currentAuthenticatedUser();
+                console.log(`User: ${JSON.stringify(user)}`);
                 setUser(user);
                 const username = user.username;
                 const categoryData = await API.graphql({
-                    query: /GraphQL/ `
-            query GetCreateCategoryInput($username: String!) {
-              getCreateCategoryInput(username: $username) {
-                category
-              }
-            }
-          `,
-                    variables: { username },
+                    query: getCreateCategoryInput,
+                    variables: { id: username },
                 });
-                const category =
-                    categoryData.data.getCreateCategoryInput?.category || ['general'];
+                let category = ['general'];
+                if (categoryData.data.getCreateCategoryInput?.category) {
+                    category = JSON.parse(categoryData.data.getCreateCategoryInput?.category);
+                }
+                console.log('User category:', category);
                 setCategories(category);
+                // window?.localStorage?.setItem('categories', JSON.stringify(category));
             } catch (err) {
                 console.log('Error retrieving user category:', err);
-                setCategories(['general']);
+                // setCategories(['general']);
+                // window?.localStorage?.setItem('categories', JSON.stringify(['general']));
             }
         }
         userDetails();
+        return () => {
+            setUser(null);
+        };
     }, []);
 
     async function signOut() {
         try {
             console.log('signing out');
+            // window?.localStorage?.removeItem('categories');
             await Auth.signOut({ global: true });
         } catch (error) {
             console.log('error signing out:', error);
         }
     }
 
-    if (user) {
-        console.log(user.attributes.name);
-    } else {
-        console.log('No user found');
-    }
 
-    if (!user) {
-        return <Navigate to="/login" />;
-    }
+
 
     const handleSaveSettings = async (newCategories) => {
         setCategories(newCategories);
+        // window?.localStorage?.setItem('categories', JSON.stringify(newCategories));
         setShowSettings(false);
         const username = user.username;
         try {
             await API.graphql({
-                query: /GraphQL/ `
-          mutation UpdateCreateCategoryInput($input: CreateCategoryInput!) {
-            updateCreateCategoryInput(input: $input) {
-              category
-            }
-          }
-        `,
+                query: updateCreateCategoryInput,
                 variables: {
                     input: {
-                        username,
-                        category: newCategories,
+                        id: username,
+                        category: JSON.stringify(newCategories),
                     },
                 },
             });
@@ -112,48 +109,48 @@ function Dashboard() {
     //jijij
     return (
         <div>
-            <Authenticator>
-                <AppBar position="static">
-                    <Toolbar>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 0 }}>
-                            News-App
-                        </Typography>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            Hi, {user?.attributes?.name}
-                        </Typography>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                            <IconButton
-                                color="inherit"
-                                aria-label="settings"
-                                onClick={handleSettingsOpen}
-                            >
-                                <SettingsIcon />
-                            </IconButton>
-                        </Box>
-                        <IconButton color="inherit" onClick={handleRefresh}>
-                            <Refresh />
+            {/* <Authenticator> */}
+            <AppBar position="static" key={"app-bar"}>
+                <Toolbar>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 0 }}>
+                        News-App
+                    </Typography>
+                    <Typography variant="h6" key={"username"} component="div" sx={{ flexGrow: 1 }}>
+                        Hi, {user?.attributes?.name}
+                    </Typography>
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                        <IconButton
+                            color="inherit"
+                            aria-label="settings"
+                            onClick={handleSettingsOpen}
+                        >
+                            <SettingsIcon />
                         </IconButton>
-                        <Button color="inherit" onClick={signOut}>
-                            Sign Out
-                        </Button>
-                    </Toolbar>
-                </AppBar>
-                {showSettings ? (
-                    <Settings
-                        categories={categories}
-                        handleClose={handleSettingsClose}
-                        handleSave={handleSaveSettings}
-                    />
-                ) : (
-                    <Box id="news">
-                        {categories.map((category) => (
-                            <News key={category} category={category} />
-                        ))}
                     </Box>
-                )}
-            </Authenticator>
+                    <IconButton color="inherit" onClick={handleRefresh}>
+                        <Refresh />
+                    </IconButton>
+                    <Button color="inherit" onClick={signOut}>
+                        Sign Out
+                    </Button>
+                </Toolbar>
+            </AppBar>
+            {showSettings ? (
+                <Settings
+                    categories={categories}
+                    handleClose={handleSettingsClose}
+                    handleSave={handleSaveSettings}
+                />
+            ) : (
+                <Box id="news" sx={{ paddingTop: "1px" }}>
+                    {categories.map((category) => (
+                        <News key={category} category={category} />
+                    ))}
+                </Box>
+            )}
+            {/* </Authenticator> */}
         </div>
     );
 }
 
-export default Dashboard;
+export default (Dashboard);
