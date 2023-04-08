@@ -93,7 +93,7 @@ function Navbar2() {
                 </Box>
             </AppBar>
             <Container>
-                <Box sx={{ paddingTop: "1px" }}>
+                <Box sx={{ paddingTop: "5px" }}>
                     {selectedButton === 'Home' ? (
                         <News categories={['general']} />
                     ) : (
