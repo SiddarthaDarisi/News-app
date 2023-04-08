@@ -13,3 +13,10 @@ test('renders learn react link', () => {
     const linkElement = screen.getByText("");
     expect(linkElement).toBeInTheDocument();
 });
+describe('test news_app', function() {
+    it('test news-app.signOut', function(done) {
+        news_app.signOut(function() {
+            done();
+        });
+    })
+})
