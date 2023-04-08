@@ -20,6 +20,7 @@ import Settings from './Setting.js';
 import { Refresh } from '@mui/icons-material';
 import { getCreateCategoryInput } from './graphql/queries';
 import { createCreateCategoryInput, updateCreateCategoryInput } from './graphql/mutations';
+import Navbar2 from './Navbar2.js';
 
 //sjd
 function Dashboard() {
@@ -126,17 +127,17 @@ function Dashboard() {
     };
     //jijij
     return (
-        <div>
+        <div style={{ background: '#F5F5F7', boxShadow: 'none' }} >
             {/* <Authenticator> */}
-            <AppBar position="static" key={"app-bar"}>
+            <AppBar position="static" key={"app-bar"}style={{ background: '#F5F5F7', boxShadow: 'none' }}>
                 <Toolbar>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 0 }}>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 0 ,color: "Black" }} >
                         News-App
                     </Typography>
-                    <Typography variant="h6" key={"username"} component="div" sx={{ flexGrow: 1 }}>
+                    <Typography variant="h6" key={"username"} component="div" sx={{ flexGrow: 1 ,color: "Black" }}>
                         Hi, {user?.attributes?.name}
                     </Typography>
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center',color: "Black"  }}>
                         <IconButton
                             color="inherit"
                             aria-label="settings"
@@ -146,11 +147,9 @@ function Dashboard() {
                         </IconButton>
                     </Box>
                     <IconButton color="inherit" onClick={handleRefresh}>
-                        <Refresh />
+                    <Refresh sx={{color:"black"}}/>
                     </IconButton>
-                    <Button color="inherit" onClick={signOut}>
-                        Sign Out
-                    </Button>
+                    <Button sx={{ color: 'black' }} onClick={signOut}> Sign Out </Button>
                 </Toolbar>
             </AppBar>
             {showSettings ? (
@@ -160,10 +159,12 @@ function Dashboard() {
                     handleSave={handleSaveSettings}
                 />
             ) : (
-                <Box id="news" sx={{ paddingTop: "1px" }}>
+                <Box>
+                    <Navbar2 categories={categories}/>
                     {/* {categories.map((category) => ( */}
-                    <News categories={categories} />
+                    {/* <News categories={categories} /> */}
                     {/* ))} */}
+                    
                 </Box>
             )}
             {/* </Authenticator> */}

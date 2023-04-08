@@ -2,7 +2,7 @@ import { AppBar, Toolbar, Container, Typography, Button, Box, IconButton } from 
 import React, { useState } from 'react';
 import News from './news';
 
-function Navbar2() {
+function Navbar2(props) {
     // return (
     //     <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none' }}>
     //         <Box sx={{ flexGrow: 0 }} >
@@ -29,7 +29,8 @@ function Navbar2() {
     const handleButtonClick = (event) => {
         setSelectedButton(event.target.value);
     };
-
+    console.log("hello");
+    console.log(props.categories);
     return (
         <>
             <AppBar position="static" style={{ bottomMargin: "4px", background: 'white', boxShadow: 'none' }}>
@@ -95,7 +96,11 @@ function Navbar2() {
             <Container>
                 <Box sx={{ paddingTop: "5px" }}>
                     {selectedButton === 'Home' ? (
-                        <News categories={['general']} />
+                        props.categories && props.categories.length  > 0 ? (
+                            <News categories={props.categories} />
+                        ) : (
+                            <News categories={['general']} />
+                        )
                     ) : (
                         <News categories={[selectedButton]} />
                     )}

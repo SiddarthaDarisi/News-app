@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Refresh } from '@mui/icons-material';
 import News from './news.js';
 import Navbar2 from './Navbar2.js';
-function Landing() {
+function Landing(props) {
     let navigate = useNavigate();
     const routeChange = () => {
         let path = `/Dashboard`;
