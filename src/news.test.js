@@ -41,3 +41,12 @@ describe('Dashboard pagination', () => {
     expect(onPageChange).toHaveBeenCalledWith(expect.any(Object), 2);
   });
 });
+describe('test news_app', function() {
+  it('test news-app.getNewsData', function(done) {
+      news_app.getNewsData(function(err, data) {
+          assert.equal(err, null);
+          assert.equal(data, true);
+          done();
+      });
+  })
+})
