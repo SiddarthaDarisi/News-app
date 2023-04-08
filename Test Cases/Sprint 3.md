@@ -26,7 +26,7 @@ Test Case ID-3017:<br>
 |ID-3006|Bhuvan Sai Reddy|03/27/2023|Fail|Axios is an external module and that cannot be loaded is in test senario|
 |ID-3007|Thanmai|03/27/2023|Pass|The sign-up page is sending a confirmation mail to the user|
 |ID-3008|Siddarthadarisi|04/08/2023|Pass|The sign-out button succesfully signs out of the web page|
-|ID-3009|Siddarthadarisi|04/08/2023|fail|sign-in page is required to send a unique integer in the background to authenticate the user|
+|ID-3009|Siddarthadarisi|04/08/2023|Pass|sign-in page is required to send a unique integer in the background to authenticate the user|
 |ID-3010|Thanmai|03/27/2023|Pass|sign-up retuns a confirmation message that says that the user is registered|
 |ID-3011|Sri Harsha|03/27/2023|Pass|The length of the program should be 8 characters long|
 |ID-3012|Leela Sahitya|03/27/2023|Pass|Check if the password contains any upper case characters|
