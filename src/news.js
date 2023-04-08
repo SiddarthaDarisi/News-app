@@ -5,8 +5,6 @@ function News(props) {
     const [newsData, setNewsData] = useState([]);
     const [loading, setLoading] = useState(false);
 
-
-
     async function getNewsData() {
         setLoading(true);
         try {

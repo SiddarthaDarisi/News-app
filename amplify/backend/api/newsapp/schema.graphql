@@ -2,8 +2,6 @@ type CreateCategoryInput @model @auth(rules: [{allow: public}, {allow: private},
   id: ID!
   username: String
   category: String
-  createdAt: AWSDateTime
-  updatedAt: AWSDateTime
   owner: String
 }
 

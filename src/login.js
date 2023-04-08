@@ -35,40 +35,23 @@
 // export default (Login);
 
 
-import { withAuthenticator } from '@aws-amplify/ui-react';
+// import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
-
+import { Navigate } from 'react-router';
 import Dashboard from './Dashboard';
 
 import React from 'react';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Auth } from 'aws-amplify';
-import awsExports from './aws-exports';
+import { Authenticator } from '@aws-amplify/ui-react';
 
 function Login() {
-    //get user state from aws cognito
-    const [user, setUser] = useState(null);
-    const navigate = useNavigate();
-
-    //check if user is signed in
-    async function checkUser() {
-        try {
-            const user = await Auth.currentAuthenticatedUser();
-            setUser(user);
-        } catch (err) {
-            setUser(null);
-        }
-    }
-
-    //check if user is signed in
-    checkUser();
 
     return (
         <div>
-            <Dashboard />
+            <Authenticator>
+                <Dashboard />
+            </Authenticator>
         </div>
     );
 }
 
-export default withAuthenticator(Login);
+export default (Login);

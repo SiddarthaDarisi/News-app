@@ -15,15 +15,11 @@ export declare type ValidationFunction<T> = (value: T, validationResponse: Valid
 export declare type CreateCategoryInputCreateFormInputValues = {
     username?: string;
     category?: string;
-    createdAt?: string;
-    updatedAt?: string;
     owner?: string;
 };
 export declare type CreateCategoryInputCreateFormValidationValues = {
     username?: ValidationFunction<string>;
     category?: ValidationFunction<string>;
-    createdAt?: ValidationFunction<string>;
-    updatedAt?: ValidationFunction<string>;
     owner?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
@@ -31,8 +27,6 @@ export declare type CreateCategoryInputCreateFormOverridesProps = {
     CreateCategoryInputCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
     username?: PrimitiveOverrideProps<TextFieldProps>;
     category?: PrimitiveOverrideProps<TextFieldProps>;
-    createdAt?: PrimitiveOverrideProps<TextFieldProps>;
-    updatedAt?: PrimitiveOverrideProps<TextFieldProps>;
     owner?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type CreateCategoryInputCreateFormProps = React.PropsWithChildren<{

@@ -1,8 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Dashboard from './Dashboard';
-import Auth from '../path/to/Auth';
-import API from '../path/to/API';
+import { Auth, API } from 'aws-amplify';
 
 describe('Dashboard', () => {
     beforeEach(() => {

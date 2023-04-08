@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Auth } from 'aws-amplify';
+import { Auth, API } from 'aws-amplify';
 import { Navigate } from 'react-router';
-import { API } from 'aws-amplify';
 import {
     AppBar,
     Toolbar,
@@ -14,19 +13,19 @@ import {
 } from '@mui/material';
 import News from './news.js';
 import './Dashboard.css';
+import { useNavigate } from 'react-router-dom';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Settings from './Setting.js';
 // import { Authenticator } from '@aws-amplify/ui-react';
 import { Refresh } from '@mui/icons-material';
 import { getCreateCategoryInput } from './graphql/queries';
-import { updateCreateCategoryInput } from './graphql/mutations';
+import { createCreateCategoryInput, updateCreateCategoryInput } from './graphql/mutations';
 
 //sjd
 function Dashboard() {
     const [user, setUser] = useState(null);
     const [categories, setCategories] = useState([]);
     const [showSettings, setShowSettings] = useState(false);
-
     useEffect(() => {
         async function userDetails() {
             try {
@@ -41,8 +40,26 @@ function Dashboard() {
                     variables: { id: username },
                 });
                 let category = ['general'];
-                if (categoryData.data.getCreateCategoryInput?.category) {
+                if (categoryData?.data?.getCreateCategoryInput?.category) {
                     category = JSON.parse(categoryData.data.getCreateCategoryInput?.category);
+                }
+                if (categoryData?.data?.getCreateCategoryInput === null) {
+                    const username = user.username;
+                    try {
+                        await API.graphql({
+                            query: createCreateCategoryInput,
+                            variables: {
+                                input: {
+                                    id: username,
+                                    username: user?.attributes?.name,
+                                    owner: username,
+                                    category: JSON.stringify(["general"])
+                                },
+                            },
+                        });
+                    } catch (err) {
+                        console.log('Error creating user category:', err);
+                    }
                 }
                 console.log('User category:', category);
                 setCategories(category);
@@ -63,12 +80,13 @@ function Dashboard() {
         try {
             console.log('signing out');
             // window?.localStorage?.removeItem('categories');
-            await Auth.signOut({ global: true });
+            await Auth.signOut();
+
+
         } catch (error) {
             console.log('error signing out:', error);
         }
     }
-
 
 
 
