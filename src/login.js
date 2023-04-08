@@ -41,17 +41,18 @@ import { Navigate } from 'react-router';
 import Dashboard from './Dashboard';
 
 import React from 'react';
-import { Authenticator } from '@aws-amplify/ui-react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 
 function Login() {
 
     return (
         <div>
-            <Authenticator>
-                <Dashboard />
-            </Authenticator>
+
+
+            <Dashboard />
+
         </div>
     );
 }
 
-export default (Login);
+export default withAuthenticator(Login);

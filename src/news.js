@@ -6,18 +6,20 @@ function News({ categories }) {
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
-
+    const [maxPage, setMaxPage] = useState(5);
     async function getNewsData() {
         setLoading(true);
         console.log(`News: ${categories}`);
         try {
             let promises = categories.map((category) => axios.get(
-                `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=af7806ff841648e9ab97313b6d60be51&page=${page}`
+                `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=e22725d642174ef0b0f1e1d3ec449714&page=${page}`
             ));
             const resps = await Promise.all(promises);
             const { totalResults, articles } = resps.reduce((accumulator, currentValue) => {
                 accumulator.articles = accumulator.articles.concat(currentValue.data.articles);
                 accumulator.totalResults += currentValue.data.totalResults;
+                console.log(accumulator.totalResults)
+                console.log(accumulator.articles)
                 return accumulator;
             }, { totalResults: 0, articles: [] });
             setNewsData(articles);
@@ -34,7 +36,9 @@ function News({ categories }) {
     }, [categories, page]);
 
     const handlePageChange = (event, value) => {
-        setPage(value);
+        if (value >= 1 && value <= maxPage) {
+            setPage(value);
+        }
     };
 
     return (
@@ -66,7 +70,7 @@ function News({ categories }) {
                 )}
             </Grid>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Pagination mt={10} count={totalPages} page={page} onChange={handlePageChange} />
+                <Pagination mt={10} count={Math.min(totalPages, maxPage)} page={page} onChange={handlePageChange} />
             </div>
         </>
     );
