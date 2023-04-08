@@ -12,7 +12,7 @@ function News({ categories }) {
         console.log(`News: ${categories}`);
         try {
             let promises = categories.map((category) => axios.get(
-                `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=e22725d642174ef0b0f1e1d3ec449714&page=${page}`
+                `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=56a82d7cb569450caef7f9362504d875&page=${page}`
             ));
             const resps = await Promise.all(promises);
             const { totalResults, articles } = resps.reduce((accumulator, currentValue) => {

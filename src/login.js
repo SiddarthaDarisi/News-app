@@ -39,7 +39,7 @@
 import '@aws-amplify/ui-react/styles.css';
 import { Navigate } from 'react-router';
 import Dashboard from './Dashboard';
-
+import { ThemeProvider } from '@aws-amplify/ui-react';
 import React from 'react';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 
@@ -48,9 +48,9 @@ function Login() {
     return (
         <div>
 
-
+        <ThemeProvider>
             <Dashboard />
-
+        </ThemeProvider>
         </div>
     );
 }
