@@ -1,16 +1,16 @@
 import React from 'react';
-import { render, waitFor, screen } from '@testing-library/react';
+import { render, waitFor, screen, fireEvent } from '@testing-library/react';
 import News from './news';
 
 import { Pagination } from '@mui/material';
 describe('News component', () => {
   it('renders loading state initially', () => {
-    render(<News category="technology" />);
+    render(<News categories={["technology"]} />);
     expect(screen.getByText('Loading...')).toBeInTheDocument();
   });
 
   it('renders news data after loading', async () => {
-    render(<News category="technology" />);
+    render(<News categories={["technology"]} />);
     await waitFor(() => expect(screen.getByAltText('news')).toBeInTheDocument());
     expect(screen.getByText('News Title')).toBeInTheDocument();
     expect(screen.getByText('News Description')).toBeInTheDocument();
@@ -34,10 +34,10 @@ describe('Dashboard pagination', () => {
     const pagination = screen.getByRole('navigation');
     const pageButtons = screen.getAllByRole('button');
     expect(pagination).toBeInTheDocument();
-    expect(pageButtons).toHaveLength(totalPages);
+    expect(pageButtons).toHaveLength(totalPages + 2);
 
     // Click a page button and assert that onPageChange is called
-    userEvent.click(pageButtons[2]);
-    expect(onPageChange).toHaveBeenCalledWith(expect.any(Object), 3);
+    fireEvent.click(pageButtons[2]);
+    expect(onPageChange).toHaveBeenCalledWith(expect.any(Object), 2);
   });
 });

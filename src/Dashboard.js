@@ -161,9 +161,9 @@ function Dashboard() {
                 />
             ) : (
                 <Box id="news" sx={{ paddingTop: "1px" }}>
-                    {categories.map((category) => (
-                        <News key={category} category={category} />
-                    ))}
+                    {/* {categories.map((category) => ( */}
+                    <News categories={categories} />
+                    {/* ))} */}
                 </Box>
             )}
             {/* </Authenticator> */}

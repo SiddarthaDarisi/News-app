@@ -1,51 +1,74 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Grid, Card, CardContent, CardMedia, Typography } from '@mui/material';
-function News(props) {
+import { Grid, Card, Box, CardContent, CardMedia, Typography, Pagination } from '@mui/material';
+function News({ categories }) {
     const [newsData, setNewsData] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
 
     async function getNewsData() {
         setLoading(true);
+        console.log(`News: ${categories}`);
         try {
-            const resp = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=e22725d642174ef0b0f1e1d3ec449714`);
-            setNewsData(resp.data.articles);
+            let promises = categories.map((category) => axios.get(
+                `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=af7806ff841648e9ab97313b6d60be51&page=${page}`
+            ));
+            const resps = await Promise.all(promises);
+            const { totalResults, articles } = resps.reduce((accumulator, currentValue) => {
+                accumulator.articles = accumulator.articles.concat(currentValue.data.articles);
+                accumulator.totalResults += currentValue.data.totalResults;
+                return accumulator;
+            }, { totalResults: 0, articles: [] });
+            setNewsData(articles);
+            setTotalPages(Math.ceil(totalResults / 20));
             setLoading(false);
         } catch (error) {
             console.error(error);
             setLoading(false);
         }
     }
+
     useEffect(() => {
         getNewsData();
-    }, [props.category]);
+    }, [categories, page]);
+
+    const handlePageChange = (event, value) => {
+        setPage(value);
+    };
+
     return (
-        <Grid container spacing={2}>
-            {loading ? (
-                <Typography variant="h5">Loading...</Typography>
-            ) : (
-                newsData.map((newsData, index) => (
-                    <Grid item xs={12} sm={6} md={4} key={index}>
-                        <Card>
-                            <CardMedia
-                                component="img"
-                                height="140"
-                                image={newsData.urlToImage}
-                                alt="news"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    {newsData.title}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {newsData.description}
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                ))
-            )}
-        </Grid>
+        <>
+            <Grid container spacing={2}>
+                {loading ? (
+                    <Typography variant="h5">Loading...</Typography>
+                ) : (
+                    newsData.map((newsData, index) => (
+                        <Grid item xs={12} sm={6} md={4} key={index}>
+                            <Card>
+                                <CardMedia
+                                    component="img"
+                                    height="140"
+                                    image={newsData.urlToImage}
+                                    alt="news"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        {newsData.title}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {newsData.description}
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                    ))
+                )}
+            </Grid>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Pagination mt={10} count={totalPages} page={page} onChange={handlePageChange} />
+            </div>
+        </>
     );
 }
 

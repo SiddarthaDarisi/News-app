@@ -43,7 +43,7 @@ function Landing() {
                 </Toolbar>
             </AppBar>
             <Box sx={{ paddingTop: "1px" }}>
-                <News category="general" />
+                <News categories={["general"]} />
             </Box>
         </div>
 
