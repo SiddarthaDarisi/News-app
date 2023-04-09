@@ -17,16 +17,13 @@ function News({ categories }) {
                 `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=c21ebcad4abf45e1a102ff36f54ffbf2&pageSize=${numArticlesPerCategory}&page=${page}`
             ));
             const resps = await Promise.all(promises);
-            const { totalResults, articles } = resps.reduce((accumulator, currentValue) => {
-                accumulator.articles = accumulator.articles.concat(currentValue.data.articles);
-                accumulator.totalResults += currentValue.data.totalResults;
-                console.log(accumulator.totalResults)
-                console.log(accumulator.articles)
+            const articles = resps.reduce((accumulator, currentValue) => {
+                accumulator = accumulator.concat(currentValue.data.articles);
                 return accumulator;
-            }, { totalResults: 0, articles: [] });
-            //yj
-            setNewsData(articles);
-            setTotalPages(Math.ceil(totalResults / 20));
+            }, []);
+            const sortedArticles = articles.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+            setNewsData(sortedArticles);
+            setTotalPages(Math.ceil(sortedArticles.length / 20));
             setLoading(false);
         } catch (error) {
             console.error(error);
