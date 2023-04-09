@@ -24,6 +24,7 @@ import Navbar2 from './Navbar2.js';
 
 //sjd
 function Dashboard() {
+
     const [user, setUser] = useState(null);
     const [categories, setCategories] = useState([]);
     const [showSettings, setShowSettings] = useState(false);
@@ -127,7 +128,7 @@ function Dashboard() {
     };
     //jijij
     return (
-        <div style={{ background: '#F5F5F7', boxShadow: 'none' }} >
+        <div style={{ background: '#F5F5F7', boxShadow: 'none' , position: 'absolute', top: 0, left: 0, width:"100%"} } >
             {/* <Authenticator> */}
             <AppBar position="static" key={"app-bar"}style={{ background: '#F5F5F7', boxShadow: 'none' }}>
                 <Toolbar>

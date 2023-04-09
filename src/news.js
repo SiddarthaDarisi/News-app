@@ -14,7 +14,7 @@ function News({ categories }) {
             const numCategories = categories.length;
             const numArticlesPerCategory = Math.ceil(50 / numCategories);
             let promises = categories.map((category) => axios.get(
-                `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=c21ebcad4abf45e1a102ff36f54ffbf2&pageSize=${numArticlesPerCategory}&page=${page}`
+                `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=d1165b675f3b450a9879de4ff8997ac9&pageSize=${numArticlesPerCategory}&page=${page}`
             ));
             const resps = await Promise.all(promises);
             const articles = resps.reduce((accumulator, currentValue) => {
@@ -48,22 +48,21 @@ function News({ categories }) {
                 ) : (
                     newsData.map((newsData, index) => (
                         <Grid item xs={12} sm={6} md={4} key={index}>
-                            <Card>
-                                <CardMedia
-                                    component="img"
-                                    height="140"
-                                    image={newsData.urlToImage}
-                                    alt="news"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        {newsData.title}
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        {newsData.description}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
+                            <Card sx={{ position: 'relative' }}>
+  <CardMedia component="img" height="140" image={newsData.urlToImage} alt="news" />
+  <CardContent>
+    <Typography gutterBottom variant="h5" component="div">
+      {newsData.title}
+    </Typography>
+    <Typography variant="body2" color="text.secondary">
+      {newsData.description}
+    </Typography>
+    <Typography variant='body2' color="text.secondary" fontSize={9} sx={{ position: 'absolute', bottom: 0, right: 0 }}>
+      {newsData.publishedAt}
+    </Typography>
+  </CardContent>
+</Card>
+
                         </Grid>
                     ))
                 )}

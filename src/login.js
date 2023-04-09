@@ -36,23 +36,88 @@
 
 
 // import { withAuthenticator } from '@aws-amplify/ui-react';
-import '@aws-amplify/ui-react/styles.css';
-import { Navigate } from 'react-router';
+import {
+    Authenticator,
+    ThemeProvider,
+    Theme,
+    useTheme
+} from '@aws-amplify/ui-react';
 import Dashboard from './Dashboard';
-import { ThemeProvider } from '@aws-amplify/ui-react';
-import React from 'react';
-import { withAuthenticator } from '@aws-amplify/ui-react';
 
-function Login() {
+export function Login() {
+    const { tokens } = useTheme();
+    const theme: Theme = {
+        name: 'Auth Example Theme',
+
+        tokens: {
+            colors: {
+                background: {
+                    primary: {
+                        value: tokens.colors.neutral['10'].value,
+                    },
+                    secondary: {
+                        value: tokens.colors.neutral['20'].value,
+                    },
+                },
+                font: {
+                    interactive: {
+                        value: tokens.colors.black.value,
+                    },
+                },
+
+            },
+            components: {
+                button: {
+                    primary: {
+                        backgroundColor: {
+                            value: tokens.colors.black.value,
+                        },
+                        _hover: {
+                            backgroundColor: {
+                                value: tokens.colors.black.value,
+                            },
+                        },
+                        _active: {
+                            backgroundColor: {
+                                value: tokens.colors.black.value,
+                            },
+                        },
+                    },
+                },
+
+                tabs: {
+                    item: {
+                        _focus: {
+                            color: {
+                                value: tokens.colors.black.value,
+                            },
+                        },
+                        _hover: {
+                            color: {
+                                value: tokens.colors.black.value,
+                            },
+                        },
+
+                        _active: {
+                            color: {
+                                value: tokens.colors.black.value,
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    };
 
     return (
-        <div>
-
-        <ThemeProvider>
-            <Dashboard />
-        </ThemeProvider>
+       
+        <ThemeProvider theme={theme}>
+        <div style={{ display:'flex', alignItems:'center', justifyContent:'center', height:'100vh' }}>
+            <Authenticator><Dashboard  /></Authenticator>
         </div>
+      </ThemeProvider>
+      
+        
     );
 }
-
-export default withAuthenticator(Login);
+export default Login;
