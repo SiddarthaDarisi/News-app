@@ -18,19 +18,19 @@ Test Case ID-3017:<br>
 
 | Test Case ID | Name of the Tester |Date| Pass/Fail | comment |
 |---|---|---|---|---|
-|ID-3001|Sri Harsha|03/26/2023|Pass|The changes done to the settings menu are saved|
-|ID-3002|Sri Harsha|03/26/2023|Pass|The cancle button is discarding all the changes done to the settings menu|
-|ID-3003|Leela Sahitya|03/26/2023|pass|The components in the settings menu are displayed properly|
-|ID-3004|Leela Sahitya|03/26/2023|pass|The save button is functioning properly|
-|ID-3005|Bhuvan Sai Reddy|03/27/2023|Pass|The page is loading properly|
-|ID-3006|Bhuvan Sai Reddy|03/27/2023|Fail|Axios is an external module and that cannot be loaded is in test senario|
-|ID-3007|Thanmai|03/27/2023|Pass|The sign-up page is sending a confirmation mail to the user|
-|ID-3008|Siddarthadarisi|04/08/2023|Pass|The sign-out button succesfully signs out of the web page|
-|ID-3009|Siddarthadarisi|04/08/2023|Pass|sign-in page is required to send a unique integer in the background to authenticate the user|
-|ID-3010|Thanmai|03/27/2023|Pass|sign-up retuns a confirmation message that says that the user is registered|
-|ID-3011|Sri Harsha|03/27/2023|Pass|The length of the program should be 8 characters long|
-|ID-3012|Leela Sahitya|03/27/2023|Pass|Check if the password contains any upper case characters|
-|ID-3013|Leela Sahitya|03/27/2023|Pass|Check if the password contains any lower case characters|
+|ID-3001||03/26/2023|Pass|The integration of news APIs to fetch and display news articles from the news api was verified and the app is able to successfully connect to the APIs, fetch data, and display it accurately|
+|ID-3002||03/26/2023|Pass|Verified the integration of user authentication and authorization features for password reset|
+|ID-3003||03/26/2023|pass|The integration of the app with a database to store and retrieve news articles, user preferences, and other relevant data is functioning properly|
+|ID-3004||03/26/2023|pass|Verifyed that the app is able to interact with the database correctly, perform CRUD (Create, Read, Update, Delete) operations accurately, and handle database-related errors gracefully|
+|ID-3005||03/27/2023|Pass|The integration of user authentication and authorization features, such as login and the users are able to authenticate successfully, and their access to different parts of the app appropriately|
+|ID-3006||03/27/2023|Fail|Tested the integration of user authentication and authorization features for registration|
+|ID-3007||03/27/2023|Pass|Tested the integration of a CMS, if applicable, for managing news articles, categories, tags, and other content-related functionalities|
+|ID-3008||04/08/2023|Pass|Verified that the app is able to interact with the CMS, retrieve and display content accurately, and handle CMS-related errors gracefully|
+|ID-3009||04/08/2023|Pass|Tested the app's ability to handle errors and exceptions gracefully, such as displaying appropriate error messages to users, logging errors for troubleshooting purposes|
+|ID-3010||03/27/2023|Pass|Verified that the news articles are displayed correctly on the home page|
+|ID-3011||03/27/2023|Pass|Verified that clicking on a category takes you to the correct category page|
+|ID-3012||03/27/2023|Pass|The news app displays the news articles properly even when the user logs out.|
+|ID-3013||03/27/2023|Pass||
 |ID-3014|||||
 |ID-3015|||||
 |ID-3016|||||
