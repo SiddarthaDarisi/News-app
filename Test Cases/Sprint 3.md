@@ -10,10 +10,10 @@ Test Case ID-3009:Test the app's ability to handle errors and exceptions gracefu
 Test Case ID-3010:Verify that the news articles are displayed correctly on the home page.<br>
 Test Case ID-3011:Verify that clicking on a category takes you to the correct category page<br>
 Test Case ID-3012:Check that the news app displays the news articles properly even when the user logs out.<br>
-Test Case ID-3013:<br>
-Test Case ID-3014:<br>
-Test Case ID-3015:<br>
-Test Case ID-3016:<br>
+Test Case ID-3013:Verify that the articles will be shown is descending order with the most recent first<br>
+Test Case ID-3014:Verify that the currently chosen tab is highlighted when you first log in, this is "Home."<br>
+Test Case ID-3015:Test if the list of articles supports pagination. You can choose how many items appear on each page.<br>
+Test Case ID-3016:Check that the limit yields to 250 articles.<br>
 Test Case ID-3017:<br>
 
 | Test Case ID | Name of the Tester |Date| Pass/Fail | comment |
@@ -30,9 +30,9 @@ Test Case ID-3017:<br>
 |ID-3010||03/27/2023|Pass|Verified that the news articles are displayed correctly on the home page|
 |ID-3011||03/27/2023|Pass|Verified that clicking on a category takes you to the correct category page|
 |ID-3012||03/27/2023|Pass|The news app displays the news articles properly even when the user logs out.|
-|ID-3013||03/27/2023|Pass||
-|ID-3014|||||
-|ID-3015|||||
-|ID-3016|||||
+|ID-3013||03/27/2023|Pass|Verified that the articles are showing in descending order with the most recent first |
+|ID-3014|||Pass|Verified that the currently chosen tab is highlighted when you first log in, this is "Home|
+|ID-3015|||Pass|Tested if the list of articles supports pagination. You can choose how many items appear on each page|
+|ID-3016|||Pass|Checked that the limit yields to 250 articles|
 |ID-3017|||||
 
