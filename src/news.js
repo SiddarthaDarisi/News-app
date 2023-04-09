@@ -11,8 +11,10 @@ function News({ categories }) {
         setLoading(true);
         console.log(`News: ${categories}`);
         try {
+            const numCategories = categories.length;
+            const numArticlesPerCategory = Math.ceil(50 / numCategories);
             let promises = categories.map((category) => axios.get(
-                `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=56a82d7cb569450caef7f9362504d875&page=${page}`
+                `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=c21ebcad4abf45e1a102ff36f54ffbf2&pageSize=${numArticlesPerCategory}&page=${page}`
             ));
             const resps = await Promise.all(promises);
             const { totalResults, articles } = resps.reduce((accumulator, currentValue) => {
@@ -30,7 +32,6 @@ function News({ categories }) {
             setLoading(false);
         }
     }
-
     useEffect(() => {
         getNewsData();
     }, [categories, page]);
