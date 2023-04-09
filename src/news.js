@@ -24,6 +24,7 @@ function News({ categories }) {
                 console.log(accumulator.articles)
                 return accumulator;
             }, { totalResults: 0, articles: [] });
+            //yj
             setNewsData(articles);
             setTotalPages(Math.ceil(totalResults / 20));
             setLoading(false);
