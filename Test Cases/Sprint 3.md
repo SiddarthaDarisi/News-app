@@ -34,10 +34,10 @@ Test Case ID-3019: Verify that the app can interact with the API, retrieve and d
 |ID-3009|Sri Harsha|04/08/2023|Pass|The news headlines are arranged with the most recent news article on the top|
 |ID-3010|Sri Harsha|04/08/2023|Pass|The news in the users profile is displayed according to the settings in his profile|
 |ID-3011|Siddartha Darisi||||
-|ID-3012|||||
+|ID-3012|Thanmai|04/10/2023|Pass|Tested if the list of articles supports pagination. You can choose how many items appear on each page.|
 |ID-3013|SiddarthaDarisi||||
-|ID-3014|||||
-|ID-3015|||||
+|ID-3014|Thanmai|04/10/2023|Pass|Verified that clicking on a category takes you to the correct category page.|
+|ID-3015|Thanmai|04/10/2023|Pass|Checked that the news app displays the news articles correctly even when the user logs out.|
 |ID-3016|||||
 |ID-3017|SiddarthaDarisi||||
 |ID-3018|||||
