@@ -12,29 +12,25 @@ Test Case ID-2011:Testing for the length of the password (login.test.js)<br>
 Test Case ID-2012:Testing for upper case characters in the password (Login.test.js)<br>
 Test Case ID-2013:Testing for lower case characters in the password (login.test.js)<br>
 Update<br>
-Test Case ID-2014:Verify atleast one category should be checked at all times<br>
-Test Case ID-2015:test if settings dialog is rendered properly.
-Test Case ID-2015:test if some catagories are selected by default.
-Test Case ID-2015:test if cancle buttone is working in settings menu.
-test if one catagoery is clicked in settings menu.
-test if the loding indicater is shown properly.
-test if the news components are fetched properly.
-test if axios API is fetching data properly.
-test if the news title is rendered properly on landing page.
-test if the news title is rendered properly on dashboard page.
-test if the catagories selected are saved properly after refresh.
-test if the settings menu is opening and closing properly.
-test if settingds are present in navbar2
-test if the dashboard is rendered properly. 
-test if the login component is rendered properly.	
-test if the sign out button succesfully signs out the user.
-
-Test Case ID-2015:<br>
-Test Case ID-2016:<br>
-Test Case ID-2017:<br>
-Test Case ID-2017:<br>
-Test Case ID-2017:<br>
-Test Case ID-2017:<br>
+Test Case ID-2014:Verify atleast one category should be checked at all times.<br>
+Test Case ID-2015:Test if settings dialog is rendered properly.<br>
+Test Case ID-2016:Test if some catagories are selected by default.<br>
+Test Case ID-2017:Test if cancle buttone is working in settings menu.<br
+Test Case ID-2018:Test if settings dialog is rendered properly.<br>
+Test Case ID-2019:Test if some catagories are selected by default<br>
+Test Case ID-2020:Test if cancle buttone is working in settings menu.<br>
+Test Case ID-2021:Test if one catagoery is clicked in settings menu.<br>
+Test Case ID-2022:Test if the loding indicater is shown properly.<br>
+Test Case ID-2023:Test if the news components are fetched properly.<br>
+Test Case ID-2024:Test if axios API is fetching data properly.<br>
+Test Case ID-2025:Test if the news title is rendered properly on landing page.<br>
+Test Case ID-2026:Test if the news title is rendered properly on dashboard page.<br>
+Test Case ID-2027:Test if the catagories selected are saved properly after refresh.<br>
+Test Case ID-2028:Test if the settings menu is opening and closing properly.<br>
+Test Case ID-2029:Test if settingds are present in navbar2.<br>
+Test Case ID-2030:Test if the dashboard is rendered properly.<br>
+Test Case ID-2031:Test if the login component is rendered properly.<br>	
+Test Case ID-2032:Test if the sign out button succesfully signs out the user.<br>
 
 | Test Case ID | Name of the Tester |Date| Pass/Fail | comment |
 |---|---|---|---|---|
