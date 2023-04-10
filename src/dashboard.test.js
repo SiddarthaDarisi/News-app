@@ -8,6 +8,9 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Dashboard from './Dashboard';
 import React from 'react';
+import '@testing-library/jest-dom/extend-expect';
+import { Auth, API } from 'aws-amplify';
+
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 test('News-app logo in app', () => {
@@ -43,4 +46,49 @@ describe('Dashboard', () => {
         expect(sportsLink).toBeInTheDocument();
         expect(technologyLink).toBeInTheDocument();
     });
+});
+jest.mock('aws-amplify');
+describe('Dashboard component', () => {
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
+
+    test('renders Dashboard component', async () => {
+        Auth.currentAuthenticatedUser.mockResolvedValue({
+            attributes: { name: 'John Doe' },
+            username: 'user123',
+        });
+
+        render(<Dashboard />);
+
+        await waitFor(() => screen.getByText('News-App'));
+
+        expect(screen.getByText('News-App')).toBeInTheDocument();
+        expect(screen.getByText('Hi, John Doe')).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Sign Out' })).toBeInTheDocument();
+        expect(screen.getByLabelText('settings')).toBeInTheDocument();
+    });
+
+    test('opens and closes settings dialog', async () => {
+        Auth.currentAuthenticatedUser.mockResolvedValue({
+            attributes: { name: 'John Doe' },
+            username: 'user123',
+        });
+
+        render(<Dashboard />);
+
+        await waitFor(() => screen.getByText('News-App'));
+
+        fireEvent.click(screen.getByLabelText('settings'));
+
+        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Cancel' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Save' })).toBeInTheDocument();
+
+        fireEvent.click(screen.getByRole('button', { name: 'Cancel' }));
+
+        await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument());
+    });
+
+
 });

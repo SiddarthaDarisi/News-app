@@ -36,17 +36,12 @@
 
 
 // import { withAuthenticator } from '@aws-amplify/ui-react';
-import {
-    Authenticator,
-    ThemeProvider,
-    Theme,
-    useTheme
-} from '@aws-amplify/ui-react';
+import { Authenticator, ThemeProvider,useTheme} from '@aws-amplify/ui-react';
 import Dashboard from './Dashboard';
-
+import React, { useState, useEffect } from 'react';
 export function Login() {
     const { tokens } = useTheme();
-    const theme: Theme = {
+    const theme = {
         name: 'Auth Example Theme',
 
         tokens: {

@@ -7,7 +7,7 @@ describe('Dashboard', () => {
     beforeEach(() => {
         // Mock Auth.currentAuthenticatedUser() to return a user object
         jest.spyOn(Auth, 'currentAuthenticatedUser').mockImplementation(() => Promise.resolve({
-            username: 'testuser',
+            username: 'sid',
             attributes: {
                 name: 'Test User'
             }
