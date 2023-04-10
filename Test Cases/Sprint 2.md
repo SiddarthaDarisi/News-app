@@ -49,19 +49,19 @@ Test Case ID-2031:Test if the sign out button succesfully signs out the user.<br
 |ID-2013|Leela Sahitya|03/27/2023|Pass|Check if the password contains any lower case characters|
 |ID-2014|Siddarthadarisi|04/08/2023|Pass|settings are redered properly|
 |ID-2015|Siddarthadarisi|04/10/2023|Pass|catagories are selected by defaul|
-|ID-2016|Siddarthadarisi|04/08/2023|Pass||
-|ID-2017|Siddarthadarisi|04/08/2023|Pass||
-|ID-2018|Siddarthadarisi|04/08/2023|Pass||
-|ID-2019|Siddarthadarisi|04/08/2023|Pass||
+|ID-2016|Siddarthadarisi|04/08/2023|Pass|The cancle button reverts the changes to the settings|
+|ID-2017|Siddarthadarisi|04/08/2023|Pass|Settings menu is rendered properly|
+|ID-2018|Siddarthadarisi|04/08/2023|Pass|The catagories that were previously selected by the user must be selected by default|
+|ID-2019|Siddarthadarisi|04/08/2023|Pass|The cancle button reverts the changes to the settings|
 |ID-2020|Siddarthadarisi|03/28/2023|pass|if atleast one category is check all times|
-|ID-2021|Siddarthadarisi|04/10/2023|Pass||
-|ID-2022|Siddarthadarisi|04/10/2023|Pass||
-|ID-2023|Siddarthadarisi|04/10/2023|Pass||
-|ID-2024|Siddarthadarisi|04/08/2023|Pass||
-|ID-2025|Siddarthadarisi|04/08/2023|Pass||
-|ID-2026|Siddarthadarisi|04/10/2023|Pass||
-|ID-2027|Siddarthadarisi|04/08/2023|Pass||
-|ID-2028|Siddarthadarisi|04/08/2023|Pass||
+|ID-2021|Siddarthadarisi|04/10/2023|Pass|The loading indicator is shown properly|
+|ID-2022|Siddarthadarisi|04/10/2023|Pass|The news components are rendered properly|
+|ID-2023|Siddarthadarisi|04/10/2023|Pass|Axios API is working properly|
+|ID-2024|Siddarthadarisi|04/08/2023|Pass|News titles are rendered properly on landing|
+|ID-2025|Siddarthadarisi|04/08/2023|Pass|News titles are rendered properly on dashboard|
+|ID-2026|Siddarthadarisi|04/10/2023|Pass|The selected catagories are saved properly|
+|ID-2027|Siddarthadarisi|04/08/2023|Pass|Settings menu is opening and closing properly|
+|ID-2028|Siddarthadarisi|04/08/2023|Pass|All the tabs are shown properly|
 |ID-2029|Siddarthadarisi|04/08/2023|Pass|Dashboard is rendered properly|
 |ID-2030|Siddarthadarisi|04/08/2023|Pass|Login rendered properly|
 |ID-2031|Siddarthadarisi|04/08/2023|Pass|Signout successful|
