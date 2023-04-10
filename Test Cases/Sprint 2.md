@@ -11,7 +11,7 @@ Test Case ID-2010:Testing for sign-up confirmation message (login.test.js)<br>
 Test Case ID-2011:Testing for the length of the password (login.test.js)<br>
 Test Case ID-2012:Testing for upper case characters in the password (Login.test.js)<br>
 Test Case ID-2013:Testing for lower case characters in the password (login.test.js)<br>
-Update
+Update<br>
 Test Case ID-2014:Verify atleast one category should be checked at all times<br>
 Test Case ID-2015:<br>
 Test Case ID-2016:<br>
