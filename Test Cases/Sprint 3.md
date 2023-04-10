@@ -14,7 +14,10 @@ Test Case ID-3013:Verify that the articles will be shown is descending order wit
 Test Case ID-3014:Verify that the currently chosen tab is highlighted when you first log in, this is "Home."<br>
 Test Case ID-3015:Test if the list of articles supports pagination. You can choose how many items appear on each page.<br>
 Test Case ID-3016:Check that the limit yields to 250 articles.<br>
-Test Case ID-3017:<br>
+Test Case ID-3017:Test if changes to settings are saved properly when save is clicked and the changes are rendered in the dashboard properly.<br>
+Test Case ID-3018:Test if the pagination component is working properly with current number of pages and check if the pagination numbers are working properly and the new page is rendered properly.
+Test Case ID-3019:Test if the users are authenticated properly in the login menu and the dashboard is rendered with their proper username.
+Test Case ID-3020:
 
 | Test Case ID | Name of the Tester |Date| Pass/Fail | comment |
 |---|---|---|---|---|
@@ -34,5 +37,7 @@ Test Case ID-3017:<br>
 |ID-3014|||Pass|Verified that the currently chosen tab is highlighted when you first log in, this is "Home|
 |ID-3015|||Pass|Tested if the list of articles supports pagination. You can choose how many items appear on each page|
 |ID-3016|||Pass|Checked that the limit yields to 250 articles|
-|ID-3017|||||
-
+|ID-3018|||||
+|ID-3019|||||
+|ID-3020|||||
+|ID-3021|||||
