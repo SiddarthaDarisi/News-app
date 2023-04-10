@@ -13,6 +13,22 @@ Test Case ID-2012:Testing for upper case characters in the password (Login.test.
 Test Case ID-2013:Testing for lower case characters in the password (login.test.js)<br>
 Update<br>
 Test Case ID-2014:Verify atleast one category should be checked at all times<br>
+Test Case ID-2015:test if settings dialog is rendered properly.
+Test Case ID-2015:test if some catagories are selected by default.
+Test Case ID-2015:test if cancle buttone is working in settings menu.
+test if one catagoery is clicked in settings menu.
+test if the loding indicater is shown properly.
+test if the news components are fetched properly.
+test if axios API is fetching data properly.
+test if the news title is rendered properly on landing page.
+test if the news title is rendered properly on dashboard page.
+test if the catagories selected are saved properly after refresh.
+test if the settings menu is opening and closing properly.
+test if settingds are present in navbar2
+test if the dashboard is rendered properly. 
+test if the login component is rendered properly.	
+test if the sign out button succesfully signs out the user.
+
 Test Case ID-2015:<br>
 Test Case ID-2016:<br>
 Test Case ID-2017:<br>
