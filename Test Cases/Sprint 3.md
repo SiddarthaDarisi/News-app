@@ -25,20 +25,20 @@ Test Case ID-3019: Verify that the app can interact with the API, retrieve and d
 |---|---|---|---|---|
 |ID-3001|Leela Sahitya|04/08/2023|Pass|Verified that the news articles are displayed correctly on the landing page when a specific category is chosen.|
 |ID-3002|Leela Sahitya|04/08/2023|Pass|Verified that the login page is rendering properly when the login button is selected on the landing page.|
-|ID-3003|SiddarthaDarisi||||
+|ID-3003|SiddarthaDarisi|03/28/2023|Pass|The users are authenticated correctly in the login menu, and the dashboard is rendered with their proper username.|
 |ID-3004|Leela Sahitya|04/08/2023|Pass|Tested the integration of user authentication and authorization features for password reset.|
 |ID-3005|Sri Harsha|04/08/2023|Pass|After signing-in, the components are altered according to the users profile|
 |ID-3006|Sri Harsha|04/08/2023|Pass|After the user loggs in to the application, the app automatically selects the home tab.|
-|ID-3007|SiddarthaDarisi||||
-|ID-3008|SiddarthaDarisi||||
+|ID-3007|SiddarthaDarisi|03/28/2023|Pass|The users are authenticated correctly in the login menu, and the dashboard is rendered with their proper username.|
+|ID-3008|SiddarthaDarisi|03/28/2023|Pass|The user authentication and authorization features for registration, and the dashboard is for the new user|
 |ID-3009|Sri Harsha|04/08/2023|Pass|The news headlines are arranged with the most recent news article on the top|
 |ID-3010|Sri Harsha|04/08/2023|Pass|The news in the users profile is displayed according to the settings in his profile|
-|ID-3011|Siddartha Darisi||||
+|ID-3011|Siddartha Darisi|04/08/2023|Pass|Tested app's ability to handle errors and exceptions gracefully, such as displaying appropriate error messages to users, logging errors for troubleshooting purposes|
 |ID-3012|Thanmai|04/10/2023|Pass|Tested if the list of articles supports pagination. You can choose how many items appear on each page.|
-|ID-3013|SiddarthaDarisi||||
+|ID-3013|SiddarthaDarisi|03/28/2023|Pass|Tested changes to settings are saved correctly when save is clicked, and the changes are rendered in the dashboard correctly.|
 |ID-3014|Thanmai|04/10/2023|Pass|Verified that clicking on a category takes you to the correct category page.|
 |ID-3015|Thanmai|04/10/2023|Pass|Checked that the news app displays the news articles correctly even when the user logs out.|
 |ID-3016|Bhuvan Sai Reddy|04/10/2023|Pass|Tested the integration of news APIs to fetch and display news articles from the news API. Verify that the app can connect to the APIs, fetch data, and display it accurately.|
-|ID-3017|SiddarthaDarisi||||
+|ID-3017|SiddarthaDarisi|03/28/2023|Pass|Verified that the app can interact with the database correctly, perform Create, Read, Update operations accurately, and handle database-related errors gracefully.|
 |ID-3018|Bhuvan Sai Reddy|04/10/2023|Pass|Tested the integration of API, if applicable, for managing news articles, categories, tags, and other content-related functionalities.|
 |ID-3019|Bhuvan Sai Reddy|04/10/2023|Pass|Verified that the app can interact with the API, retrieve and display content accurately, and handle API-related errors gracefully.|
