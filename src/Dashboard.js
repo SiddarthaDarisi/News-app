@@ -147,7 +147,7 @@ function Dashboard() {
                             <SettingsIcon />
                         </IconButton>
                     </Box>
-                    <IconButton color="inherit" onClick={handleRefresh}>
+                    <IconButton color="inherit" onClick={handleRefresh} data-testid="refresh-button">
                     <Refresh sx={{color:"black"}}/>
                     </IconButton>
                     <Button sx={{ color: 'black' }} onClick={signOut}> Sign Out </Button>

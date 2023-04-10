@@ -1,67 +1,77 @@
-import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import Dashboard from './Dashboard';
-import { Auth, API } from 'aws-amplify';
+import React from 'react';
+jest.mock('aws-amplify');
 
 describe('Dashboard', () => {
-    beforeEach(() => {
-        // Mock Auth.currentAuthenticatedUser() to return a user object
-        jest.spyOn(Auth, 'currentAuthenticatedUser').mockImplementation(() => Promise.resolve({
-            username: 'sid',
-            attributes: {
-                name: 'Test User'
-            }
-        }));
+  const mockAPI = jest.fn();
+  
+  beforeAll(() => {
+    global.API = { graphql: mockAPI };
+  });
 
-        // Mock API.graphql() to return a default category
-        jest.spyOn(API, 'graphql').mockImplementation(() => Promise.resolve({
-            data: {
-                getCreateCategoryInput: {
-                    category: '["general"]'
-                }
-            }
-        }));
+  beforeEach(() => {
+    mockAPI.mockReset();
+  });
+
+  it('should save categories after refreshing the page and clicking settings', async () => {
+    const categories = ['general', 'technology'];
+    const newCategories = ['general', 'technology', 'business'];
+
+    mockAPI.mockResolvedValueOnce({
+      data: {
+        getCreateCategoryInput: {
+          category: JSON.stringify(categories),
+        },
+      },
     });
 
-    afterEach(() => {
-        jest.restoreAllMocks();
+    render(<Dashboard />);
+
+    await act(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 0));
     });
 
-    it('should keep settings the same after refresh', async () => {
-        // Render the Dashboard component
-        render(<Dashboard />);
+    expect(screen.getByText('Hi,')).toBeInTheDocument();
 
-        // Wait for the News component to appear
-        await waitFor(() => screen.getByRole('article'));
+    mockAPI.mockResolvedValueOnce({ data: {} });
 
-        // Click on the settings button
-        fireEvent.click(screen.getByLabelText('settings'));
-
-        // Wait for the Settings component to appear
-        await waitFor(() => screen.getByRole('dialog'));
-
-        // Select a new category
-        fireEvent.change(screen.getByRole('combobox'), { target: { value: ['business'] } });
-
-        // Click on the save button
-        fireEvent.click(screen.getByRole('button', { name: 'Save' }));
-
-        // Wait for the Settings component to disappear
-        await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument());
-
-        // Simulate a refresh
-        window.location.reload = jest.fn();
-
-        // Wait for the News component to appear again
-        await waitFor(() => screen.getByRole('article'));
-
-        // Click on the settings button again
-        fireEvent.click(screen.getByLabelText('settings'));
-
-        // Wait for the Settings component to appear again
-        await waitFor(() => screen.getByRole('dialog'));
-
-        // Check if the category is still the same
-        expect(screen.getByRole('combobox')).toHaveValue(['business']);
+    act(() => {
+      const settingsButton = screen.getByLabelText('settings');
+      settingsButton.click();
     });
+
+    await act(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 0));
+    });
+
+   
+
+    const input = screen.getByLabelText('Settings');
+    const saveButton = screen.getByText('Save');
+    act(() => {
+      input.value = 'business';
+      saveButton.click();
+    });
+
+    await act(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 0));
+    });
+
+    mockAPI.mockResolvedValueOnce({ data: {} });
+
+    act(() => {
+      const refreshButton = screen.getByTestId('refresh-button');
+      refreshButton.click();
+    });
+
+    await act(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 0));
+    });
+
+    expect(mockAPI).toHaveBeenCalledTimes(0);
+    
+    expect(screen.getByText('technology')).toBeInTheDocument();
+    expect(screen.getByText('business')).toBeInTheDocument();
+  });
 });

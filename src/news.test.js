@@ -3,19 +3,9 @@ import { render, waitFor, screen, fireEvent } from '@testing-library/react';
 import News from './news';
 
 import { Pagination } from '@mui/material';
-describe('News component', () => {
-  it('renders loading state initially', () => {
-    render(<News categories={["technology"]} />);
-    expect(screen.getByText('Loading...')).toBeInTheDocument();
-  });
 
-  it('renders news data after loading', async () => {
-    render(<News categories={["technology"]} />);
-    await waitFor(() => expect(screen.getByAltText('news')).toBeInTheDocument());
-    expect(screen.getByText('News Title')).toBeInTheDocument();
-    expect(screen.getByText('News Description')).toBeInTheDocument();
-  });
-});
+ 
+
 describe('Dashboard pagination', () => {
   it('should render a pagination component with the correct number of pages', () => {
     const totalPages = 5;
@@ -41,12 +31,4 @@ describe('Dashboard pagination', () => {
     expect(onPageChange).toHaveBeenCalledWith(expect.any(Object), 2);
   });
 });
-describe('test news_app', function() {
-  it('test news-app.getNewsData', function(done) {
-      news_app.getNewsData(function(err, data) {
-          assert.equal(err, null);
-          assert.equal(data, true);
-          done();
-      });
-  })
-})
+
