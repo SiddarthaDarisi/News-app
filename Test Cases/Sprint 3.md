@@ -16,7 +16,7 @@ Test Case ID-3015:Test if the list of articles supports pagination. You can choo
 Test Case ID-3016:Check that the limit yields to 250 articles.<br>
 Test Case ID-3017:Test if changes to settings are saved properly when save is clicked and the changes are rendered in the dashboard properly.<br>
 Test Case ID-3018:Test if the pagination component is working properly with current number of pages and check if the pagination numbers are working properly and the new page is rendered properly.
-Test Case ID-3019:Test if the users are authenticated properly in the login menu and the dashboard is rendered with their proper username.
+Test Case ID-3019:Test if the users are authenticated properly in the login menu and the dashboard is rendered with their proper username.<br>
 Test Case ID-3020:
 
 | Test Case ID | Name of the Tester |Date| Pass/Fail | comment |
