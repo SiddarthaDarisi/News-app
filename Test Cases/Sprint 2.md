@@ -15,7 +15,7 @@ Update<br>
 Test Case ID-2014:Verify atleast one category should be checked at all times.<br>
 Test Case ID-2015:Test if settings dialog is rendered properly.<br>
 Test Case ID-2016:Test if some catagories are selected by default.<br>
-Test Case ID-2017:Test if cancle buttone is working in settings menu.<br
+Test Case ID-2017:Test if cancle buttone is working in settings menu.<br>
 Test Case ID-2018:Test if settings dialog is rendered properly.<br>
 Test Case ID-2019:Test if some catagories are selected by default<br>
 Test Case ID-2020:Test if cancle buttone is working in settings menu.<br>
