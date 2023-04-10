@@ -18,7 +18,7 @@ Test Case ID-2015:Test if some catagories are selected by default.<br>
 Test Case ID-2016:Test if cancle buttone is working in settings menu.<br>
 Test Case ID-2017:Test if settings dialog is rendered properly.<br>
 Test Case ID-2018:Test if some catagories are selected by default<br>
-Test Case ID-2019:Test if cancle buttone is working in settings menu.<br>
+Test Case ID-2019:Test if cancle button is working in settings menu.<br>
 Test Case ID-2020:Test if one catagoery is clicked in settings menu.<br>
 Test Case ID-2021:Test if the loding indicater is shown properly.<br>
 Test Case ID-2022:Test if the news components are fetched properly.<br>
@@ -47,23 +47,23 @@ Test Case ID-2031:Test if the sign out button succesfully signs out the user.<br
 |ID-2011|Sri Harsha|03/27/2023|Pass|The length of the program should be 8 characters long|
 |ID-2012|Leela Sahitya|03/27/2023|Pass|Check if the password contains any upper case characters|
 |ID-2013|Leela Sahitya|03/27/2023|Pass|Check if the password contains any lower case characters|
-|ID-2014|Siddarthadarisi||||
-|ID-2015|Siddarthadarisi||||
-|ID-2016|Siddarthadarisi||||
-|ID-2017|Siddarthadarisi||||
-|ID-2018|Siddarthadarisi||||
-|ID-2019|Siddarthadarisi||||
+|ID-2014|Siddarthadarisi|04/08/2023|Pass|settings are redered properly|
+|ID-2015|Siddarthadarisi|04/10/2023|Pass|catagories are selected by defaul|
+|ID-2016|Siddarthadarisi|04/08/2023|Pass||
+|ID-2017|Siddarthadarisi|04/08/2023|Pass||
+|ID-2018|Siddarthadarisi|04/08/2023|Pass||
+|ID-2019|Siddarthadarisi|04/08/2023|Pass||
 |ID-2020|Siddarthadarisi|03/28/2023|pass|if atleast one category is check all times|
-|ID-2021|Siddarthadarisi||||
-|ID-2022|Siddarthadarisi||||
-|ID-2023|Siddarthadarisi||||
-|ID-2024|Siddarthadarisi||||
-|ID-2025|Siddarthadarisi||||
-|ID-2026|Siddarthadarisi||||
-|ID-2027|Siddarthadarisi||||
-|ID-2028|Siddarthadarisi||||
-|ID-2029|Siddarthadarisi||||
-|ID-2030|Siddarthadarisi||||
+|ID-2021|Siddarthadarisi|04/10/2023|Pass||
+|ID-2022|Siddarthadarisi|04/10/2023|Pass||
+|ID-2023|Siddarthadarisi|04/10/2023|Pass||
+|ID-2024|Siddarthadarisi|04/08/2023|Pass||
+|ID-2025|Siddarthadarisi|04/08/2023|Pass||
+|ID-2026|Siddarthadarisi|04/10/2023|Pass||
+|ID-2027|Siddarthadarisi|04/08/2023|Pass||
+|ID-2028|Siddarthadarisi|04/08/2023|Pass||
+|ID-2029|Siddarthadarisi|04/08/2023|Pass|Dashboard is rendered properly|
+|ID-2030|Siddarthadarisi|04/08/2023|Pass|Login rendered properly|
 |ID-2031|Siddarthadarisi|04/08/2023|Pass|Signout successful|
 
 
