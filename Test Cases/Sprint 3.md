@@ -38,7 +38,7 @@ Test Case ID-3019: Verify that the app can interact with the API, retrieve and d
 |ID-3013|SiddarthaDarisi||||
 |ID-3014|Thanmai|04/10/2023|Pass|Verified that clicking on a category takes you to the correct category page.|
 |ID-3015|Thanmai|04/10/2023|Pass|Checked that the news app displays the news articles correctly even when the user logs out.|
-|ID-3016|||||
+|ID-3016|Bhuvan Sai Reddy|04/10/2023|Pass|Tested the integration of news APIs to fetch and display news articles from the news API. Verify that the app can connect to the APIs, fetch data, and display it accurately.|
 |ID-3017|SiddarthaDarisi||||
-|ID-3018|||||
-|ID-3019|||||
+|ID-3018|Bhuvan Sai Reddy|04/10/2023|Pass|Tested the integration of API, if applicable, for managing news articles, categories, tags, and other content-related functionalities.|
+|ID-3019|Bhuvan Sai Reddy|04/10/2023|Pass|Verified that the app can interact with the API, retrieve and display content accurately, and handle API-related errors gracefully.|
