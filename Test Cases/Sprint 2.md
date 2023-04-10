@@ -13,7 +13,7 @@ Test Case ID-2012:Testing for upper case characters in the password (Login.test.
 Test Case ID-2013:Testing for lower case characters in the password (login.test.js)<br>
 Update<br>
 
-Test Case ID-2014:Test if settings dialog is rendered properly.<br>
+Test Case ID-2014:Test if settings dialog is rendered properlyin dashboard.<br>
 Test Case ID-2015:Test if some catagories are selected by default.<br>
 Test Case ID-2016:Test if cancle buttone is working in settings menu.<br>
 Test Case ID-2017:Test if settings dialog is rendered properly.<br>
@@ -53,7 +53,7 @@ Test Case ID-2031:Test if the sign out button succesfully signs out the user.<br
 |ID-2017|Siddarthadarisi||||
 |ID-2018|Siddarthadarisi||||
 |ID-2019|Siddarthadarisi||||
-|ID-2020|Siddarthadarisi||||
+|ID-2020|Siddarthadarisi|03/28/2023|pass|if atleast one category is check all times|
 |ID-2021|Siddarthadarisi||||
 |ID-2022|Siddarthadarisi||||
 |ID-2023|Siddarthadarisi||||
@@ -64,6 +64,6 @@ Test Case ID-2031:Test if the sign out button succesfully signs out the user.<br
 |ID-2028|Siddarthadarisi||||
 |ID-2029|Siddarthadarisi||||
 |ID-2030|Siddarthadarisi||||
-|ID-2031|Siddarthadarisi||||
+|ID-2031|Siddarthadarisi|04/08/2023|Pass|Signout successful|
 
 
