@@ -33,22 +33,22 @@ Test Case ID-3019: Verify that the app can interact with the API, retrieve and d
 
 | Test Case ID | Name of the Tester |Date| Pass/Fail | comment |
 |---|---|---|---|---|
-|ID-3001|||||
-|ID-3002|||||
-|ID-3003|SiddarthaDarisi||Pass||
-|ID-3004|||||
+|ID-3001|Leela Sahitya|04/08/2023|Pass|Verified that the news articles are displayed correctly on the landing page when a specific category is chosen.|
+|ID-3002|Leela Sahitya|04/08/2023|Pass|Verified that the login page is rendering properly when the login button is selected on the landing page.|
+|ID-3003|SiddarthaDarisi||||
+|ID-3004|Leela Sahitya|04/08/2023|Pass|Tested the integration of user authentication and authorization features for password reset.|
 |ID-3005|||||
 |ID-3006|||||
-|ID-3007|SiddarthaDarisi||Pass||
-|ID-3008|SiddarthaDarisi||Pass||
+|ID-3007|SiddarthaDarisi||||
+|ID-3008|SiddarthaDarisi||||
 |ID-3009|||||
 |ID-3010|||||
-|ID-3011|Siddartha Darisi||Pass||
+|ID-3011|Siddartha Darisi||||
 |ID-3012|||||
-|ID-3013|SiddarthaDarisi||Pass||
+|ID-3013|SiddarthaDarisi||||
 |ID-3014|||||
 |ID-3015|||||
 |ID-3016|||||
-|ID-3017|SiddarthaDarisi||Pass||
+|ID-3017|SiddarthaDarisi||||
 |ID-3018|||||
 |ID-3019|||||
