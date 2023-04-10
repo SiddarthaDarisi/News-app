@@ -35,20 +35,20 @@ Test Case ID-3019: Verify that the app can interact with the API, retrieve and d
 |---|---|---|---|---|
 |ID-3001|||||
 |ID-3002|||||
-|ID-3003|SiddarthaDarisi||||
+|ID-3003|SiddarthaDarisi||Pass||
 |ID-3004|||||
 |ID-3005|||||
 |ID-3006|||||
-|ID-3007|SiddarthaDarisi||||
-|ID-3008|SiddarthaDarisi||||
+|ID-3007|SiddarthaDarisi||Pass||
+|ID-3008|SiddarthaDarisi||Pass||
 |ID-3009|||||
 |ID-3010|||||
-|ID-3011|Siddartha Darisi||||
+|ID-3011|Siddartha Darisi||Pass||
 |ID-3012|||||
-|ID-3013|SiddarthaDarisi||||
+|ID-3013|SiddarthaDarisi||Pass||
 |ID-3014|||||
 |ID-3015|||||
 |ID-3016|||||
-|ID-3017|SiddarthaDarisi||||
+|ID-3017|SiddarthaDarisi||Pass||
 |ID-3018|||||
 |ID-3019|||||
