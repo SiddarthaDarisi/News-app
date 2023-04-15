@@ -1,36 +1,24 @@
 import { AppBar, Toolbar, Container, Typography, Button, Box, IconButton } from '@mui/material';
 import React, { useState } from 'react';
 import News from './news';
+import SearchBar from './Searchbar';
 
 function Navbar2(props) {
-    // return (
-    //     <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none' }}>
-    //         <Box sx={{ flexGrow: 0 }} >
-
-    //             <Button >Home</Button>
-    //             <Button value="General"  >General</Button>
-    //             <Button value="Business">Business</Button>
-
-    //             <Button value="Entertainment">Entertainment</Button>
-    //             <Button value="Health">Health</Button>
-    //             <Button value="Science">Science</Button>
-    //             <Button value="Sports">Sports</Button>
-
-    //             <Button value="Technology">Technology</Button>
-
-
-    //         </Box>
-
-
-    //     </AppBar>
-
     const [selectedButton, setSelectedButton] = useState('Home');
+    const [search, setSearch] = useState("");
+    const [searchKey, setSearchKey] = useState(0);
 
     const handleButtonClick = (event) => {
         setSelectedButton(event.target.value);
+        setSearch("");
     };
-    console.log("hello");
-    console.log(props.categories);
+
+    const handleSearch = (searchValue) => {
+        setSelectedButton(null);
+        setSearch(searchValue);
+        setSearchKey(searchKey + 1); // Update the search key to force component remount
+    }
+
     return (
         <>
             <AppBar position="static" style={{ bottomMargin: "4px", background: 'white', boxShadow: 'none' }}>
@@ -93,23 +81,23 @@ function Navbar2(props) {
                     </Button>
                 </Box>
             </AppBar>
+
             <Container>
+                <SearchBar value={search} onSearch={handleSearch} />
                 <Box sx={{ paddingTop: "5px" }}>
-                    {selectedButton === 'Home' ? (
-                        props.categories && props.categories.length  > 0 ? (
-                            <News categories={props.categories} />
-                        ) : (
-                            <News categories={['general']} />
-                        )
-                    ) : (
+                    {search ? (
+                         <News key={searchKey} searchQuery={search} />
+                    ) :selectedButton === 'Home' ? (
+                        <News categories={['general']} /> ): selectedButton ? (
                         <News categories={[selectedButton]} />
+                    ) : props.categories && props.categories.length > 0 ? (
+                        <News categories={props.categories} />
+                    ) : (
+                        <News categories={['general']} />
                     )}
                 </Box>
             </Container>
         </>
     );
 }
-
-
-
 export default Navbar2;
