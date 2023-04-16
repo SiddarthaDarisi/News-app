@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Grid, Card, CardContent, CardMedia, Typography, Pagination } from '@mui/material';
 import { API } from 'aws-amplify';
-function News({ categories }) {
+
+function News({ categories,searchQuery }) {
     const [newsData, setNewsData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
@@ -10,35 +11,6 @@ function News({ categories }) {
     const articlesPerPage = 10;
 
 
-    // async function getNewsData() {
-    //     setLoading(true);
-    //     console.log(`News: ${categories}`);
-    //     try {
-    //         const numCategories = categories.length;
-    //         let divider = 100;
-    //         if(numCategories === 2) {
-    //             divider = 200;
-    //         } else if(numCategories > 2) {
-    //             divider = 250;
-    //         }
-    //         const numArticlesPerCategory = Math.floor( divider / numCategories);
-    //         let promises = categories.map((category) => axios.get(
-    //             `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=e22725d642174ef0b0f1e1d3ec449714&pageSize=${numArticlesPerCategory}`
-    //         ));
-    //         const resps = await Promise.all(promises);
-    //         const articles = resps.reduce((accumulator, currentValue) => {
-    //             accumulator = accumulator.concat(currentValue.data.articles);
-    //             return accumulator;
-    //         }, []);
-    //         const sortedArticles = articles.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
-    //         setNewsData(sortedArticles);
-    //         setTotalPages(Math.ceil(sortedArticles.length / articlesPerPage));
-    //         setLoading(false);
-    //     } catch (error) {
-    //         console.error(error);
-    //         setLoading(false);
-    //     }
-    // }
 
     async function getNewsData() {
         setLoading(true);
@@ -48,7 +20,7 @@ function News({ categories }) {
             const apiName = 'restnewsApi';
             const path = '/items'; // You can leave this as '/' since we don't need to specify a path in this case
             const init = {
-                body: { categories }
+                body: { searchQuery,categories }
             };
 
             const response = await API.post(apiName, path, init);

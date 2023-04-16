@@ -22,7 +22,7 @@
       "function": {
         "fetchnews": {
           "deploymentBucketName": "amplify-amplifydd79c592cca84-staging-25335-deployment",
-          "s3Key": "amplify-builds/fetchnews-516e305466644b6e7479-build.zip"
+          "s3Key": "amplify-builds/fetchnews-36505a6f5057655a6339-build.zip"
         }
       }
     }
