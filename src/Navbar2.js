@@ -85,15 +85,18 @@ function Navbar2(props) {
             <Container>
                 <SearchBar value={search} onSearch={handleSearch} />
                 <Box sx={{ paddingTop: "5px" }}>
-                    {search ? (
-                         <News key={searchKey} searchQuery={search} />
-                    ) :selectedButton === 'Home' ? (
-                        <News categories={['general']} /> ): selectedButton ? (
-                        <News categories={[selectedButton]} />
-                    ) : props.categories && props.categories.length > 0 ? (
-                        <News categories={props.categories} />
+                    {(!search || search === ' ') ? (
+                        selectedButton === 'Home' ? (
+                            <News categories={['general']} />
+                        ) : selectedButton ? (
+                            <News categories={[selectedButton]} />
+                        ) : props.categories && props.categories.length > 0 ? (
+                            <News categories={props.categories} />
+                        ) : (
+                            <News categories={['general']} />
+                        )
                     ) : (
-                        <News categories={['general']} />
+                        <News key={searchKey} searchQuery={search} />
                     )}
                 </Box>
             </Container>

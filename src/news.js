@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Grid, Card, CardContent, CardMedia, Typography, Pagination } from '@mui/material';
+import { Grid, Card, CardContent, CardMedia, Typography, Pagination,Alert } from '@mui/material';
 import { API } from 'aws-amplify';
+
 
 function News({ categories,searchQuery }) {
     const [newsData, setNewsData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+    const [searchFailed, setSearchFailed] = useState(false);
     const articlesPerPage = 10;
 
 
 
     async function getNewsData() {
         setLoading(true);
+        setSearchFailed(false);
         console.log(`News: ${categories}`);
 
         try {
@@ -25,6 +28,9 @@ function News({ categories,searchQuery }) {
 
             const response = await API.post(apiName, path, init);
             const sortedArticles = response.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+            if (sortedArticles.length === 0) {
+                setSearchFailed(true);
+            }
             setNewsData(sortedArticles);
             setTotalPages(Math.ceil(sortedArticles.length / articlesPerPage));
             setLoading(false);
@@ -47,6 +53,19 @@ function News({ categories,searchQuery }) {
 
     return (
         <>
+        {searchFailed ? (
+              <Alert severity="error" sx={{ mb: 3 }}>
+              <Typography variant="body2" sx={{ textAlign: "left" }}>
+                  Your search - {searchQuery} - did not match any documents. <br />
+                  <br />Suggestions: <br />
+                  <ul>
+                      <li>Make sure all words are spelled correctly.</li>
+                      <li>Try different keywords.</li>
+                      <li>Try more general keywords.</li>
+                  </ul>
+              </Typography>
+          </Alert>
+            ) : null}
             <Grid container spacing={2}>
                 {loading ? (
                     <Typography variant="h5">Loading...</Typography>
