@@ -14,7 +14,7 @@ function Navbar2(props) {
     };
 
     const handleSearch = (searchValue) => {
-        setSelectedButton(null);
+        setSelectedButton("Home");
         setSearch(searchValue);
         setSearchKey(searchKey + 1); // Update the search key to force component remount
     }
@@ -85,7 +85,7 @@ function Navbar2(props) {
             <Container>
                 <SearchBar value={search} onSearch={handleSearch} />
                 <Box sx={{ paddingTop: "5px" }}>
-                    {(!search || search === ' ') ? (
+                    {(!search || search === "") ? (
                         selectedButton === 'Home' ? (
                             <News categories={['general']} />
                         ) : selectedButton ? (
@@ -95,7 +95,7 @@ function Navbar2(props) {
                         ) : (
                             <News categories={['general']} />
                         )
-                    ) : (
+                    ) : (console.log("searching for: " + search),
                         <News key={searchKey} searchQuery={search} />
                     )}
                 </Box>
