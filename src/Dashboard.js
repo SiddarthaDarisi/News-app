@@ -16,13 +16,11 @@ import './Dashboard.css';
 import { useNavigate } from 'react-router-dom';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Settings from './Setting.js';
-// import { Authenticator } from '@aws-amplify/ui-react';
 import { Refresh } from '@mui/icons-material';
 import { getCreateCategoryInput } from './graphql/queries';
 import { createCreateCategoryInput, updateCreateCategoryInput } from './graphql/mutations';
 import Navbar2 from './Navbar2.js';
 
-//sjd
 function Dashboard() {
 
     const [user, setUser] = useState(null);
@@ -65,11 +63,8 @@ function Dashboard() {
                 }
                 console.log('User category:', category);
                 setCategories(category);
-                // window?.localStorage?.setItem('categories', JSON.stringify(category));
             } catch (err) {
                 console.log('Error retrieving user category:', err);
-                // setCategories(['general']);
-                // window?.localStorage?.setItem('categories', JSON.stringify(['general']));
             }
         }
         userDetails();
@@ -81,7 +76,6 @@ function Dashboard() {
     async function signOut() {
         try {
             console.log('signing out');
-            // window?.localStorage?.removeItem('categories');
             await Auth.signOut();
 
 
@@ -94,7 +88,6 @@ function Dashboard() {
 
     const handleSaveSettings = async (newCategories) => {
         setCategories(newCategories);
-        // window?.localStorage?.setItem('categories', JSON.stringify(newCategories));
         setShowSettings(false);
         const username = user.username;
         try {
@@ -126,7 +119,6 @@ function Dashboard() {
     const handleRefresh = () => {
         window.location.reload();
     };
-    //jijij
     return (
         <div style={{ background: '#F5F5F7', boxShadow: 'none' , position: 'absolute', top: 0, left: 0, width:"100%"} } >
             {/* <Authenticator> */}
