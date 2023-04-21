@@ -12,6 +12,11 @@ const awsmobile = {
             "name": "restnewsApi",
             "endpoint": "https://7zsoygvog8.execute-api.us-east-1.amazonaws.com/staging",
             "region": "us-east-1"
+        },
+        {
+            "name": "searchapi",
+            "endpoint": "https://cc2r02u5xk.execute-api.us-east-1.amazonaws.com/staging",
+            "region": "us-east-1"
         }
     ],
     "aws_cognito_identity_pool_id": "us-east-1:0a80e705-0e6d-4a90-8c25-0f6a277355d1",
