@@ -1,13 +1,12 @@
 {
   "version": 1,
   "paths": {
-    "/news": {
-      "name": "/news",
+    "/search": {
+      "name": "/search",
       "lambdaFunction": "fetchnews",
       "permissions": {
         "setting": "open"
       }
     }
-    
   }
 }
