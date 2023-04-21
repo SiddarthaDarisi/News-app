@@ -17,7 +17,8 @@
       },
       "api": {
         "newsapp": {},
-        "restnewsApi": {}
+        "restnewsApi": {},
+        "searchapi": {}
       },
       "function": {
         "fetchnews": {

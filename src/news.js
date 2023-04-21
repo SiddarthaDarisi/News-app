@@ -21,18 +21,18 @@ function News({ categories,searchQuery }) {
       let apiName;
         let path;
         let init;
-        
+
         try {if(searchQuery) {
-     apiName = 'restnewsApi';
+     apiName = 'searchapi';
      path = '/search';
      init = {
-        body: { searchQuery,categories }
+        body: { searchQuery}
     };
 } else {
      apiName = 'restnewsApi';
      path = '/news';
      init = {
-        body: { searchQuery,categories }
+        body: {categories }
     };
 }
 
