@@ -1,12 +1,20 @@
 {
   "version": 1,
   "paths": {
-    "/items": {
-      "name": "/items",
+    "/search": {
+      "name": "/search",
+      "lambdaFunction": "fetchnews",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/news": {
+      "name": "/search",
       "lambdaFunction": "fetchnews",
       "permissions": {
         "setting": "open"
       }
     }
+    
   }
 }
