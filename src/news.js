@@ -18,13 +18,23 @@ function News({ categories,searchQuery }) {
         setLoading(true);
         setSearchFailed(false);
         console.log(`News: ${categories}`);
-
-        try {
-            const apiName = 'restnewsApi';
-            const path = '/items'; // You can leave this as '/' since we don't need to specify a path in this case
-            const init = {
-                body: { searchQuery,categories }
-            };
+      let apiName;
+        let path;
+        let init;
+        
+        try {if(searchQuery) {
+     apiName = 'restnewsApi';
+     path = '/search';
+     init = {
+        body: { searchQuery,categories }
+    };
+} else {
+     apiName = 'restnewsApi';
+     path = '/news';
+     init = {
+        body: { searchQuery,categories }
+    };
+}
 
             const response = await API.post(apiName, path, init);
             const sortedArticles = response.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
