@@ -20,16 +20,7 @@ function Landing(props) {
 
     return (
         <div className="Landing" style={{ background: '#F5F5F7', boxShadow: 'none' }}>
-            {/* <nav>
-                <ul>
-                    <li>
-                        <Link to="/">News-App</Link>
-                    </li>
-                    <li>
-                        <Link to="/login">Login</Link>
-                    </li>
-                </ul>
-            </nav> */}
+          
             <AppBar position="static" style={{ background: '#F5F5F7', boxShadow: 'none' }}>
                 <Toolbar >
                     <Typography variant="h6" component="div" sx={{ flexGrow: 0 }} sx={{ color: "Black" }}>
