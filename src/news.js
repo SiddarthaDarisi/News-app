@@ -27,14 +27,14 @@ function News({ categories, searchQuery }) {
                 apiName = 'searchapi';
                 path = '/search';
                 init = {
-                    body: { searchQuery,categories }
+                    body: { searchQuery }
                 };
             } else {
                 apiName = 'restnewsApi';
                 path = '/news';
                 init = {};
                 if (categories) {
-                    init.body = {  searchQuery,categories  };
+                    init.body = {  categories  };
                 }
             }
 

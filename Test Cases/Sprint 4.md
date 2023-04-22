@@ -38,6 +38,41 @@
 <h2>Actual Result:</h2>
 <p>When searching with an empty string, the application displays a wrongful error message, indicating a bug in the search functionality. </p>
 <br/>
+<h2>Single Endpoint Usage - Requirements Not Met</h2>
+<p>Date: 2023-04-19</p>
+<p>Time: 12:36 AM</p>
+<h2>Issue Description:</h2>
+<p>During a review of the application's implementation, it was observed that the requirements for utilizing two separate endpoints to call the backend have not been met. Instead, a single endpoint is being used, which may lead to potential issues in the application's functionality.</p>
+<h2>Steps to Identify:</h2>
+<ol>
+  <li>Review the application's codebase, specifically the sections related to backend API calls.</li>
+  <li>Identify the usage of endpoints to call the backend.</li>
+  <li>Observe that a single endpoint is being used instead of the required two separate endpoints.</li>
+</ol>
+<h2>Expected Implementation:</h2>
+<p>The application should have been designed to utilize two separate endpoints for calling the backend, as outlined in the project requirements. This approach would help ensure proper separation of concerns and maintainability of the code.</p>
+<h2>Actual Implementation:</h2>
+<p>Currently, the application is using a single endpoint for calling the backend, which does not meet the project requirements. This may lead to potential issues in the application's functionality and maintainability. It is recommended to revisit the project requirements and make necessary adjustments to the implementation to ensure compliance with the specified requirements.</p>
+<br/>
+
+<h2>Single Endpoint Usage - Requirements met</h2>
+<p>Date: 2023-04-21</p>
+<p>Time: 4:05 PM</p>
+<h2>Issue Description:</h2>
+<p>During a test run of the application, it was observed that the implemented changes have successfully addressed the previously identified issues. The application now utilizes two separate endpoints for calling the backend, in compliance with the project requirements.</p>
+<h2>Steps to Verify:</h2>
+<ol>
+  <li>Review the application's codebase, specifically the sections related to backend API calls.</li>
+  <li>Identify the usage of endpoints to call the backend.</li>
+  <li>Confirm that two separate endpoints are now being used, as per the project requirements.</li>
+  <li>Run the application and perform various tests to ensure the proper functioning of the updated implementation.</li>
+</ol>
+<h2>Expected Implementation:</h2>
+<p>The application should utilize two separate endpoints for calling the backend, as outlined in the project requirements. This approach helps ensure proper separation of concerns and maintainability of the code.</p>
+<h2>Actual Implementation:</h2>
+<p>Upon reviewing the application and running tests, it has been confirmed that the implemented changes have successfully addressed the previous issues. The application now uses two separate endpoints for calling the backend, in compliance with the project requirements. 
+</p>
+<br/>
 <h2>Categories Content Not Reflected - Regression Test Failure</h2>
 <p>Date: 2023-04-22</p>
 <p>Time: 12:44 AM</p>
@@ -58,7 +93,7 @@
 <br/>
 <h2>Categories Content Issue Fixed - Successful Regression Test</h2>
 <p>Date: 2023-04-22</p>
-<p>Time: 3:00 PM</p>
+<p>Time: 3:00 AM</p>
 <h2>Issue Description:</h2>
 <p>The issue where the content of the categories was not being reflected as expected in the application has been fixed.</p>
 <h2>Fix Implementation:</h2>
@@ -75,3 +110,23 @@
 <p>Upon adding or editing a category, the content should be reflected in the application.</p>
 <h2>Actual Result:</h2>
 <p>The content of the categories is now being reflected in the application after performing the regression test. The issue has been resolved successfully.</p>
+<br/>
+<h2>Empty String Search Bug Fixed - Successful Resolution</h2>
+<p>Date: 2023-04-22</p>
+<p>Time: 3:00 AM</p>
+<h2>Issue Description:</h2>
+<p>Previously, a bug was discovered during testing where searching with an empty string resulted in a wrongful error message being displayed in the application. This issue has now been successfully resolved.</p>
+<h2>Steps to Verify Resolution:</h2>
+<ol>
+  <li>Launch the application.</li>
+  <li>Navigate to the "Search" section.</li>
+  <li>Enter an empty string in the search input field.</li>
+  <li>Initiate the search by pressing Enter or clicking the search button.</li>
+  <li>Observe the absence of the wrongful error message and the appropriate handling of the empty string search.</li>
+</ol>
+<h2>Expected Result:</h2>
+<p>After fixing the bug, when searching with an empty string, the application should either display a message prompting the user to input a valid search query or simply return no results without displaying an error.</p>
+<h2>Actual Result:</h2>
+<p>Upon testing the application after implementing the bug fix, it has been confirmed that the wrongful error message no longer appears when searching with an empty string. The application now handles empty string searches appropriately, either prompting the user to input a valid search query or returning no results without displaying an error.
+</p>
+<br/>
