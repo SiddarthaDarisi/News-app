@@ -54,7 +54,7 @@
   </li>
   <li>Test advanced searching
     <ul>
-      <li>Verify successful advanced search results using multiple filters</li>
+      <li>Verify successful advanced search results using multiple filters Like AND,OR, and ()</li>
       <li>Verify error messages or empty results for invalid advanced search queries</li>
     </ul>
   </li>
