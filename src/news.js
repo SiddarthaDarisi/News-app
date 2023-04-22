@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Grid, Card, CardContent, CardMedia, Typography, Pagination,Alert } from '@mui/material';
+import { Grid, Card, CardContent, CardMedia, Typography, Pagination, Alert } from '@mui/material';
 import { API } from 'aws-amplify';
 
 
-function News({ categories,searchQuery }) {
+function News({ categories, searchQuery }) {
     const [newsData, setNewsData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
@@ -18,23 +18,25 @@ function News({ categories,searchQuery }) {
         setLoading(true);
         setSearchFailed(false);
         console.log(`News: ${categories}`);
-      let apiName;
+        let apiName;
         let path;
         let init;
 
-        try {if(searchQuery) {
-     apiName = 'searchapi';
-     path = '/search';
-     init = {
-        body: { searchQuery}
-    };
-} else {
-     apiName = 'restnewsApi';
-     path = '/news';
-     init = {
-        body: {categories }
-    };
-}
+        try {
+            if (searchQuery) {
+                apiName = 'searchapi';
+                path = '/search';
+                init = {
+                    body: { searchQuery,categories }
+                };
+            } else {
+                apiName = 'restnewsApi';
+                path = '/news';
+                init = {};
+                if (categories) {
+                    init.body = {  searchQuery,categories  };
+                }
+            }
 
             const response = await API.post(apiName, path, init);
             const sortedArticles = response.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
@@ -50,6 +52,7 @@ function News({ categories,searchQuery }) {
         }
     }
 
+
     useEffect(() => {
         getNewsData();
     }, [categories]);
@@ -63,18 +66,18 @@ function News({ categories,searchQuery }) {
 
     return (
         <>
-        {searchFailed ? (
-              <Alert severity="error" sx={{ mb: 3 }}>
-              <Typography variant="body2" sx={{ textAlign: "left" }}>
-                  Your search - {searchQuery} - did not match any documents. <br />
-                  <br />Suggestions: <br />
-                  <ul>
-                      <li>Make sure all words are spelled correctly.</li>
-                      <li>Try different keywords.</li>
-                      <li>Try more general keywords.</li>
-                  </ul>
-              </Typography>
-          </Alert>
+            {searchFailed ? (
+                <Alert severity="error" sx={{ mb: 3 }}>
+                    <Typography variant="body2" sx={{ textAlign: "left" }}>
+                        Your search - {searchQuery} - did not match any documents. <br />
+                        <br />Suggestions: <br />
+                        <ul>
+                            <li>Make sure all words are spelled correctly.</li>
+                            <li>Try different keywords.</li>
+                            <li>Try more general keywords.</li>
+                        </ul>
+                    </Typography>
+                </Alert>
             ) : null}
             <Grid container spacing={2}>
                 {loading ? (
