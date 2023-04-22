@@ -1,7 +1,7 @@
 <h2>Full System Test Plan</h2>
 <p>Objective: To ensure the application works as expected after fixing the categories content issue and to verify that no new issues have been introduced.</p>
 <h3>1. Testing Methodology</h3>
-<p>We will be using a combination of manual and automated testing methodologies to ensure the functionality of the application. The tests will cover both positive and negative scenarios, as well as boundary cases. The regression tests will be added to the existing test suite to ensure continuous verification of fixed issues.</p>
+<p>We will be using a combination of manual methodologies to ensure the functionality of the application. The tests will cover both positive and negative scenarios, as well as boundary cases. The regression tests will be added to the existing test suite to ensure continuous verification of fixed issues.</p>
 <h3>2. Test Cases</h3>
 <p>Update the test cases to include regression testing. The following regression tests will be added to the test suite:</p>
 <ol>
