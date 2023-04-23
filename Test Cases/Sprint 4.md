@@ -130,3 +130,24 @@
 <p>Upon testing the application after implementing the bug fix, it has been confirmed that the wrongful error message no longer appears when searching with an empty string. The application now handles empty string searches appropriately, either prompting the user to input a valid search query or returning no results without displaying an error.
 </p>
 <br/>
+<h2>Settings test </h2>
+<p>Date: 2023-04-23</p>
+<p>Time: 3:00 pm</p>
+<h2>Feature Description:</h2>
+<p>The application includes a settings menu that allows users to set his/her news preference by using the checkboxes.</p>
+<h2>Test Objective:</h2>
+<p>Verify that the settings menu functions as expected and meets the requirements and alters the home page according to the options in the settings menu.</p>
+<h2>Test Steps:</h2>
+<ol>
+  <li>Launch the application.</li>
+  <li>Navigate to the login page.</li>
+  <li>Enter user credientials in the apropriate feilds & login.</li>
+  <li>Navigate to the settings menu which is located at the top right corner of the page.</li>
+  <li>Edit the sttings according to the user preference and click save.</li>
+  <li>Observe that the settings results are displayed according to the user preference.</li>
+</ol>
+<h2>Expected Result:</h2>
+<p>The News must be displayed according to the user preference set in the settings menu.</p>
+<h2>Actual Result:</h2>
+<p>The news is displayed accourding the user preference.</p>
+<br/>
