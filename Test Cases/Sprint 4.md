@@ -149,5 +149,5 @@
 <h2>Expected Result:</h2>
 <p>The News must be displayed according to the user preference set in the settings menu.</p>
 <h2>Actual Result:</h2>
-<p>The news is displayed accourding the user preference.</p>
+<p>The news is displayed according the user preference.</p>
 <br/>
