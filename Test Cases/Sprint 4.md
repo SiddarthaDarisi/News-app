@@ -283,3 +283,63 @@
 <h2>Actual Result:</h2>
 <p>The application prompts an error message when the user sign-in with the invalid email address.</p>
 <br/>
+<br/>
+<h2>merged articles Test Success</h2>
+<p>Date: 2023-04-24</p>
+<p>Time: 2:25 pm</p>
+<h2>Description:</h2>
+<p>This application has a funcionality to merge articles from different categories.</p>
+<h2>Test Objective:</h2>
+<p>Verify when the user choose different catogeries of merged articles are displayed successfuly.</p>
+<h2>Test Steps:</h2>
+<ol>
+  <li>Launch the application.</li>
+  <li>Navigate to the "Search" section.</li>
+  <li>Enter a search query with keywords to display the merge articles as per the user requirement.</li>
+  <li>Initiate the search by pressing Enter or clicking the search button.</li>
+  <li>Observe that the search results are displayed according to the search query as per the requirements.</li>
+</ol>
+<h2>Expected Result:</h2>
+<p>The search capability should correctly process the search query with keywords and displaying accurate search results of merged articles.</p>
+<h2>Actual Result:</h2>
+<p>The search capability successfully processed the search query with keywords and providing accurate search results. This indicates that the feature has been successfully implemented and meets the desired expectations.</p>
+<br/>
+<h2>category articles reflected Test </h2>
+<p>Date: 2023-04-24</p>
+<p>Time: 2:40 pm</p>
+<h2>Description:</h2>
+<p>This application has a funcionality to display the different catogeries of articles.</p>
+<h2>Test Objective:</h2>
+<p>Verify that the content of the categories is reflected successfuly.</p>
+<h2>Test Steps:</h2>
+<ol>
+  <li>Launch the application.</li>
+  <li>Select a catogeries in the navigation bar (navbar2) located at the top of website below the title.</li>
+  <li>see if the news that is updated in the page matches the catogiries selected.</li>
+</ol>
+<h2>Expected Result:</h2>
+<p>The news that is displayed in the web page matches with the catogries that is selected in the navigation bar.</p>
+<h2>Actual Result:</h2>
+<p>the catogiries that is selected successfully displays news that is selected.</p>
+<br/>
+<h2>category articles backend Test </h2>
+<p>Date: 2023-04-24</p>
+<p>Time: 3:20 pm</p>
+<h2>Description:</h2>
+<p>This test is to verify that the catogery selection is fetching the correct news articles in the backend.</p>
+<h2>Test Objective:</h2>
+<p>Verify that the content of the categories is reflected successfuly.</p>
+<h2>Test Steps:</h2>
+<ol>
+  <li>login to AWS console.</li>
+  <li>Go to the API gateway.</li>
+  <li>open restnewsapi</li>
+  <li>click on test</li>
+  <li>set method to post</li>
+  <li>type "categories": ["general"] an click on test</li>
+</ol>
+<h2>Expected Result:</h2>
+<p>The news data is displayed in the field according to the selected catogerie.</p>
+<h2>Actual Result:</h2>
+<p>The data is succesfully displaye in the output field according to the catogrie that is input in the test field.</p>
+
