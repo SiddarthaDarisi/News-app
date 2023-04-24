@@ -354,9 +354,10 @@
 <p>The application prompts an error message when the user sign-in with the invalid email address.</p>
 <br/>
 <br/>
-<h2>merged articles Test Success</h2>
+<h2>merged articles Test Success- Regression Test Successful</h2>
 <p>Date: 2023-04-24</p>
 <p>Time: 2:25 pm</p>
+<p>Tester Name: Thanmai Kalahasthi</p>
 <h2>Description:</h2>
 <p>This application has a funcionality to merge articles from different categories.</p>
 <h2>Test Objective:</h2>
@@ -374,9 +375,10 @@
 <h2>Actual Result:</h2>
 <p>The search capability successfully processed the search query with keywords and providing accurate search results. This indicates that the feature has been successfully implemented and meets the desired expectations.</p>
 <br/>
-<h2>category articles reflected Test </h2>
+<h2>category articles reflected Test- Regression Test Successful </h2>
 <p>Date: 2023-04-24</p>
 <p>Time: 2:40 pm</p>
+<p>Tester Name: Thanmai Kalahasthi</p>
 <h2>Description:</h2>
 <p>This application has a funcionality to display the different catogeries of articles.</p>
 <h2>Test Objective:</h2>
@@ -392,9 +394,10 @@
 <h2>Actual Result:</h2>
 <p>the catogiries that is selected successfully displays news that is selected.</p>
 <br/>
-<h2>category articles backend Test </h2>
+<h2>category articles backend Test - Regression Test Successful</h2>
 <p>Date: 2023-04-24</p>
 <p>Time: 3:20 pm</p>
+<p>Tester Name: Thanmai Kalahasthi</p>
 <h2>Description:</h2>
 <p>This test is to verify that the catogery selection is fetching the correct news articles in the backend.</p>
 <h2>Test Objective:</h2>
