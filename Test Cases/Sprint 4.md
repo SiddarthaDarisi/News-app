@@ -455,7 +455,7 @@
 <p>The application should handle 404 errors returned by the News API and display an error message indicating that the search failed.</p>
 <h2>Actual Result:</h2>
 <p>The application now properly handles 404 errors returned by the News API and displays an error message indicating that the search failed after performing the regression test. The issue has been resolved successfully.</p>
-
+<br>
 
 
 <h2>Search Test- Successful Regression Test</h2>
