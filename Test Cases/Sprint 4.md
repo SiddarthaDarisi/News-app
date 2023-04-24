@@ -457,7 +457,7 @@
 <p>The application now properly handles 404 errors returned by the News API and displays an error message indicating that the search failed after performing the regression test. The issue has been resolved successfully.</p>
 <br>
 
-<h3>Final Test</h3>
+<h1>Final Test</h1>
 <h2>Search Test- Successful Regression Test</h2>
 <p>Date: 2023-04-24</p>
 <p>Time: 4:55 PM</p>
@@ -477,3 +477,19 @@
 <h2>Actual Result:</h2>
 <p>The search bar works with a keyword giving results reguarding the input given. The search bar works properly with AND OR & NOT functions giving the appropriate output. The search bar ignored AND OR & NOT without any context.</p>
 
+<h2>Categories- Successful Regression Test</h2>
+<p>Date: 2023-04-24</p>
+<p>Time: 5:10 PM</p>
+<p>Tester Name: Bhuvan Sai</p>
+<h2>Description:</h2>
+<p>Test if the categories menu is working properly.</p>
+<h2>Steps:</h2>
+<ol>
+  <li>Launch the application.</li>
+  <li>Navigate to the NavBar2.</li>
+  <li>Select a particular categorie in the menu</li>
+</ol>
+<h2>Expected Result:</h2>
+<p>The news in the page must be displayed according to the categorie selected.</p>
+<h2>Actual Result:</h2>
+<p>The news is succesfully displayed according to the selection in the NavBar2 i.e. if we select health in the navigation bar, news is updated to display health news in the page.</p>
