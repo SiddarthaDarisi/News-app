@@ -149,7 +149,7 @@ Graph Ql test<br>
 <p>Upon testing the application after implementing the bug fix, it has been confirmed that the wrongful error message no longer appears when searching with an empty string. The application now handles empty string searches appropriately, either prompting the user to input a valid search query or returning no results without displaying an error.
 </p>
 <br/>
-<h2>Settings test </h2>
+<h2>Settings test - Regression Test Successful </h2>
 <p>Date: 2023-04-23</p>
 <p>Time: 3:00 pm</p>
 <h2>Feature Description:</h2>
@@ -170,7 +170,7 @@ Graph Ql test<br>
 <h2>Actual Result:</h2>
 <p>The news is displayed according the user preference.</p>
 <br/>
-<h2>Sign-up Test </h2>
+<h2>Sign-up Test- Regression Test Successful </h2>
 <p>Date: 2023-04-23</p>
 <p>Time: 4:00 pm</p>
 <h2>Description:</h2>
@@ -190,7 +190,7 @@ Graph Ql test<br>
 <h2>Actual Result:</h2>
 <p>The application allowed the user to sign-up.</p>
 <br/>
-<h2>Error Message Test </h2>
+<h2>Error Message Test - Regression Test Successful</h2>
 <p>Date: 2023-04-23</p>
 <p>Time: 4:10 pm</p>
 <h2>Description:</h2>
@@ -209,7 +209,7 @@ Graph Ql test<br>
 <h2>Actual Result:</h2>
 <p>The application prompts an error message when the user Sign-up with the invalid credientials.</p>
 <br/>
-<h2>Error Message for duplicate email Test </h2>
+<h2>Error Message for duplicate email Test - Regression Test Successful </h2>
 <p>Date: 2023-04-23</p>
 <p>Time: 4:30 pm</p>
 <h2>Description:</h2>
