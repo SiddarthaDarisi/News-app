@@ -151,63 +151,63 @@
 <h2>Actual Result:</h2>
 <p>The news is displayed according the user preference.</p>
 <br/>
-<h2>Sign in Test </h2>
+<h2>Sign-up Test </h2>
 <p>Date: 2023-04-23</p>
 <p>Time: 4:00 pm</p>
 <h2>Description:</h2>
-<p>The application offers a sign-in screen where users may register using a valid email address and password.</p>
+<p>The application offers a sign-up screen where users may register using a valid email address and password.</p>
 <h2>Test Objective:</h2>
-<p>Verify that the sign-in page allows the user to register using a valid email address and password successfully.
+<p>Verify that the sign-up page allows the user to register using a valid email address and password successfully.
 </p>
 <h2>Test Steps:</h2>
 <ol>
   <li>Launch the application.</li>
-  <li>Navigate to the Sign-in page.</li>
+  <li>Navigate to the Sign-up page.</li>
   <li>Enter user credientials in the apropriate feilds & register.</li>
   <li>Observe that the user is register with the valid credientials according to the requirements.</li>
 </ol>
 <h2>Expected Result:</h2>
-<p>The applications validate the user credentials  and allows the user to login.</p>
+<p>The applications validate the user credentials  and allows the user to sign-up.</p>
 <h2>Actual Result:</h2>
-<p>The application allowed the user to login.</p>
+<p>The application allowed the user to sign-up.</p>
 <br/>
 <h2>Error Message Test </h2>
 <p>Date: 2023-04-23</p>
 <p>Time: 4:10 pm</p>
 <h2>Description:</h2>
-<p>The sign-in page prompts an error message for invalid email or password.</p>
+<p>The sign-up page prompts an error message for invalid email or password.</p>
 <h2>Test Objective:</h2>
-<p>Verify that the sign-in page prompts an error message when the user is trying to login with a invaid email and password.</p>
+<p>Verify that the sign-up page prompts an error message when the user is trying to login with a invaid email and password.</p>
 <h2>Test Steps:</h2>
 <ol>
   <li>Launch the application.</li>
-  <li>Navigate to the Sign-in page.</li>
+  <li>Navigate to the Sign-up page.</li>
   <li>Enter user credientials in the apropriate feilds & register.</li>
   <li>Observe that the user is register with the invalid credientials are able to see the error message as per the requirements.</li>
 </ol>
 <h2>Expected Result:</h2>
 <p>The applications validate the user invalid credentials and prompts an error message.</p>
 <h2>Actual Result:</h2>
-<p>The application prompts an error message when the user Sign-in with the invalid credientials.</p>
+<p>The application prompts an error message when the user Sign-up with the invalid credientials.</p>
 <br/>
 <h2>Error Message for duplicate email Test </h2>
 <p>Date: 2023-04-23</p>
 <p>Time: 4:30 pm</p>
 <h2>Description:</h2>
-<p>The sign-in page prompts an error message for duplicate email.</p>
+<p>The sign-up page prompts an error message for duplicate email.</p>
 <h2>Test Objective:</h2>
-<p>Verify that the sign-in page prompts an error message when the user is trying to login with a duplicate email.</p>
+<p>Verify that the sign-up page prompts an error message when the user is trying to login with a duplicate email.</p>
 <h2>Test Steps:</h2>
 <ol>
   <li>Launch the application.</li>
-  <li>Navigate to the Sign-in page.</li>
+  <li>Navigate to the Sign-up page.</li>
   <li>Enter user credientials in the apropriate feilds & register.</li>
   <li>Observe that the user is register with the duplicate email and it is promiting the error message as per the requirements.</li>
 </ol>
 <h2>Expected Result:</h2>
 <p>The applications validate the user duplicate email and prompts an error message.</p>
 <h2>Actual Result:</h2>
-<p>The application prompts an error message when the user sign-in with the duplicate email.</p>
+<p>The application prompts an error message when the user sign-up with the duplicate email.</p>
 <br/>
 
 <h2>"NOT" Operator Issue - Regression Test Failure</h2>
