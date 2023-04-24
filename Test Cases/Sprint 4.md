@@ -316,6 +316,7 @@
 <h2>Sign-In Test </h2>
 <p>Date: 2023-04-24</p>
 <p>Time: 11:00 am</p>
+<p>Tester Name: Sri Harsha</p>
 <h2>Description:</h2>
 <p>The application offers a sign-in screen where users may login using a valid email address and password.</p>
 <h2>Test Objective:</h2>
@@ -335,6 +336,7 @@
 <h2>Error Message for Sign-In </h2>
 <p>Date: 2023-04-24</p>
 <p>Time: 11:20 am</p>
+<p>Tester Name: Sri Harsha</p>
 <h2>Description:</h2>
 <p>The sign-in page prompts an error message for duplicate email.</p>
 <h2>Test Objective:</h2>
