@@ -228,6 +228,7 @@
   <li>Launch the application.</li>
   <li>Navigate to the Sign-up page.</li>
   <li>Enter user credientials in the apropriate feilds & register.</li>
+  <li>User receives a confirmation code to the users email to create an account </li>
   <li>Observe that the user is register with the valid credientials according to the requirements.</li>
 </ol>
 <h2>Expected Result:</h2>
