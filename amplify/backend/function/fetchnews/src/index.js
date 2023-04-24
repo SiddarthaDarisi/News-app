@@ -19,7 +19,7 @@ exports.handler = async (event) => {
         try {
             let url;
             if (searchQuery) {
-                url = `https://newsapi.org/v2/everything?q=${searchQuery}&apiKey=e22725d642174ef0b0f1e1d3ec449714`;
+                url = `https://newsapi.org/v2/everything?q=${searchQuery}&apiKey=56a82d7cb569450caef7f9362504d875`;
                 const resp = await axios.get(url);
                 const sortedArticles = resp.data.articles.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
                 return sortedArticles;
@@ -35,7 +35,7 @@ exports.handler = async (event) => {
                 
                 const allArticles = [];
                 for (const category of categories) {
-                    url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=e22725d642174ef0b0f1e1d3ec449714&pageSize=${numArticlesPerCategory}`;
+                    url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=d1165b675f3b450a9879de4ff8997ac9&pageSize=${numArticlesPerCategory}`;
                     const resp = await axios.get(url);
                     allArticles.push(...resp.data.articles);
                 }
