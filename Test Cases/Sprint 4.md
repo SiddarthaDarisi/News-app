@@ -244,3 +244,42 @@
 <p>The search function should properly handle the "NOT" operator and exclude terms from the search results.</p>
 <h2>Actual Result:</h2>
 <p>The search function now properly handles the "NOT" operator and excludes terms from the search results after performing the regression test. The issue has been resolved successfully.</p>
+<br/>
+<h2>Sign-In Test </h2>
+<p>Date: 2023-04-24</p>
+<p>Time: 11:00 am</p>
+<h2>Description:</h2>
+<p>The application offers a sign-in screen where users may login using a valid email address and password.</p>
+<h2>Test Objective:</h2>
+<p>Verify Verify that the user successful login with valid email and password.</p>
+<h2>Test Steps:</h2>
+<ol>
+  <li>Launch the application.</li>
+  <li>Navigate to the Sign-in page.</li>
+  <li>Enter user credientials in the apropriate feilds to login.</li>
+  <li>Observe that the user is  able to logged in into the application with the valid credientials as per the requirements.</li>
+</ol>
+<h2>Expected Result:</h2>
+<p>The applications validate the user credentials allows him/her to login.</p>
+<h2>Actual Result:</h2>
+<p>The application allows the user to Sign-in.</p>
+<br/>
+<h2>Error Message for Sign-In </h2>
+<p>Date: 2023-04-24</p>
+<p>Time: 11:20 am</p>
+<h2>Description:</h2>
+<p>The sign-in page prompts an error message for duplicate email.</p>
+<h2>Test Objective:</h2>
+<p>Verify that the sign-in page prompts an error message when the user is trying to login with a invalid email address.</p>
+<h2>Test Steps:</h2>
+<ol>
+  <li>Launch the application.</li>
+  <li>Navigate to the Sign-in page.</li>
+  <li>Enter user credientials in the apropriate feilds to login.</li>
+  <li>Observe that the user is logging in with the invalid email and it is promiting the error message as per the requirements.</li>
+</ol>
+<h2>Expected Result:</h2>
+<p>The applications validate the user credientials and prompts an error message if the user enters an invalid email.</p>
+<h2>Actual Result:</h2>
+<p>The application prompts an error message when the user sign-in with the invalid email address.</p>
+<br/>
