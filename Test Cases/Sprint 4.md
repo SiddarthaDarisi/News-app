@@ -209,3 +209,38 @@
 <h2>Actual Result:</h2>
 <p>The application prompts an error message when the user sign-in with the duplicate email.</p>
 <br/>
+
+<h2>"NOT" Operator Issue - Regression Test Failure</h2>
+<p>Date: 2023-04-24</p>
+<p>Time: 10:30 AM</p>
+<h2>Issue Description:</h2>
+<p>During a manual regression test, it was observed that the News API search function was not properly handling the "NOT" operator in search queries.</p>
+<h2>Steps to Reproduce:</h2>
+<ol>
+  <li>Launch the application.</li>
+  <li>Navigate to the "News" section.</li>
+  <li>Perform a search query that includes the "NOT" operator.</li>
+  <li>Observe that the search results do not properly exclude the terms following "NOT".</li>
+</ol>
+<h2>Expected Result:</h2>
+<p>The search function should properly handle the "NOT" operator and exclude terms from the search results.</p>
+<h2>Actual Result:</h2>
+<p>The search function is not properly handling the "NOT" operator and is not excluding terms from the search results after performing the manual regression test.</p>
+<h2>"NOT" Operator Issue Fixed - Successful Regression Test</h2>
+<p>Date: 2023-04-24</p>
+<p>Time: 12:00 PM</p>
+<h2>Issue Description:</h2>
+<p>A manual regression test revealed that the News API search function was not properly handling the "NOT" operator in search queries.</p>
+<h2>Fix Implementation:</h2>
+<p>An update was made to the getNewsData() function in the frontend code to replace all occurrences of "NOT" with the "-" symbol before passing the query to the News API. This allows the search function to properly exclude terms from the search results.</p>
+<h2>Steps to Verify:</h2>
+<ol>
+  <li>Launch the application.</li>
+  <li>Navigate to the "News" section.</li>
+  <li>Perform a search query that includes the "NOT" operator.</li>
+  <li>Observe that the search results now properly exclude the terms following "NOT".</li>
+</ol>
+<h2>Expected Result:</h2>
+<p>The search function should properly handle the "NOT" operator and exclude terms from the search results.</p>
+<h2>Actual Result:</h2>
+<p>The search function now properly handles the "NOT" operator and excludes terms from the search results after performing the regression test. The issue has been resolved successfully.</p>

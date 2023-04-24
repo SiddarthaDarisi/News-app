@@ -21,20 +21,24 @@ function News({ categories, searchQuery }) {
         let apiName;
         let path;
         let init;
-
+        let sanitizedQuery = searchQuery.replace(/NOT/g, "-");
+        sanitizedQuery = searchQuery.replace(/not/g, "-");
+        console.log(sanitizedQuery)
         try {
             if (searchQuery) {
                 apiName = 'searchapi';
                 path = '/search';
+                // Replace "NOT" with "-" symbol in search query
+               
                 init = {
-                    body: { searchQuery }
+                    body: { searchQuery: sanitizedQuery }
                 };
             } else {
                 apiName = 'restnewsApi';
                 path = '/news';
                 init = {};
                 if (categories) {
-                    init.body = {  categories  };
+                    init.body = { categories };
                 }
             }
 
