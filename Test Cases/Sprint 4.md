@@ -195,6 +195,7 @@
 <h2>Settings test - Regression Test Successful </h2>
 <p>Date: 2023-04-23</p>
 <p>Time: 3:00 pm</p>
+<p>Tester Name: Leela Sahitya</p>
 <h2>Feature Description:</h2>
 <p>The application includes a settings menu that allows users to set his/her news preference by using the checkboxes.</p>
 <h2>Test Objective:</h2>
@@ -216,6 +217,7 @@
 <h2>Sign-up Test- Regression Test Successful </h2>
 <p>Date: 2023-04-23</p>
 <p>Time: 4:00 pm</p>
+<p>Tester Name: Leela Sahitya</p>
 <h2>Description:</h2>
 <p>The application offers a sign-up screen where users may register using a valid email address and password.</p>
 <h2>Test Objective:</h2>
@@ -236,6 +238,7 @@
 <h2>Error Message Test - Regression Test Successful</h2>
 <p>Date: 2023-04-23</p>
 <p>Time: 4:10 pm</p>
+<p>Tester Name: Leela Sahitya</p>
 <h2>Description:</h2>
 <p>The sign-up page prompts an error message for invalid email or password.</p>
 <h2>Test Objective:</h2>
@@ -255,6 +258,7 @@
 <h2>Error Message for duplicate email Test - Regression Test Successful </h2>
 <p>Date: 2023-04-23</p>
 <p>Time: 4:30 pm</p>
+<p>Tester Name: Leela Sahitya</p>
 <h2>Description:</h2>
 <p>The sign-up page prompts an error message for duplicate email.</p>
 <h2>Test Objective:</h2>
