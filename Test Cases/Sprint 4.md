@@ -49,13 +49,10 @@
 <h2>Back End Test</h2>
 <p>Search Endpoint test</p>
 <p>Caterories end point test</p>
+<br>
+<br>
 
 <h1>Test Report</h1>
-<br>
-<br>
-
-
-<br/>
 <h2>Search Capability with Keywords - Feature Test Success</h2>
 <p>Date: 2023-04-16</p>
 <p>Time: 2:25 am</p>
