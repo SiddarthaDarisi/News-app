@@ -54,6 +54,7 @@
 <h2>Search Capability with Keywords - Feature Test Success</h2>
 <p>Date: 2023-04-16</p>
 <p>Time: 2:25 am</p>
+<p>Tester Name: Siddartha Darisi</p>
 <h2>Feature Description:</h2>
 <p>The application now includes a search capability that allows users to search by keywords, with support for AND, OR, NOT operators, and parenthesis for grouping conditions.</p>
 <h2>Test Objective:</h2>
@@ -74,6 +75,7 @@
 <h2>Empty String Search - Bug Report</h2>
 <p>Date: 2023-04-17</p>
 <p>Time: 10:00 AM</p>
+<p>Tester Name: Siddartha Darisi</p>
 <h2>Issue Description:</h2>
 <p>A bug was discovered during testing, where searching with an empty string results in a wrongful error message being displayed in the application.</p>
 <h2>Steps to Reproduce:</h2>
@@ -92,6 +94,7 @@
 <h2>Single Endpoint Usage - Requirements Not Met</h2>
 <p>Date: 2023-04-19</p>
 <p>Time: 12:36 AM</p>
+<p>Tester Name: Siddartha Darisi</p>
 <h2>Issue Description:</h2>
 <p>During a review of the application's implementation, it was observed that the requirements for utilizing two separate endpoints to call the backend have not been met. Instead, a single endpoint is being used, which may lead to potential issues in the application's functionality.</p>
 <h2>Steps to Identify:</h2>
@@ -109,6 +112,7 @@
 <h2>Single Endpoint Usage - Requirements met</h2>
 <p>Date: 2023-04-21</p>
 <p>Time: 4:05 PM</p>
+<p>Tester Name: Siddartha Darisi</p>
 <h2>Issue Description:</h2>
 <p>During a test run of the application, it was observed that the implemented changes have successfully addressed the previously identified issues. The application now utilizes two separate endpoints for calling the backend, in compliance with the project requirements.</p>
 <h2>Steps to Verify:</h2>
@@ -127,6 +131,7 @@
 <h2>Categories Content Not Reflected - Regression Test Failure</h2>
 <p>Date: 2023-04-22</p>
 <p>Time: 12:44 AM</p>
+<p>Tester Name: Siddartha Darisi</p>
 <h2>Issue Description:</h2>
 <p>During a manual regression test, it was observed that the content of the categories is not being reflected as expected in the application.</p>
 <h2>Steps to Reproduce:</h2>
@@ -145,6 +150,7 @@
 <h2>Categories Content Issue Fixed - Successful Regression Test</h2>
 <p>Date: 2023-04-22</p>
 <p>Time: 3:00 AM</p>
+<p>Tester Name: Siddartha Darisi</p>
 <h2>Issue Description:</h2>
 <p>The issue where the content of the categories was not being reflected as expected in the application has been fixed.</p>
 <h2>Fix Implementation:</h2>
@@ -165,6 +171,7 @@
 <h2>Empty String Search Bug Fixed - Successful Resolution</h2>
 <p>Date: 2023-04-22</p>
 <p>Time: 3:00 AM</p>
+<p>Tester Name: Siddartha Darisi</p>
 <h2>Issue Description:</h2>
 <p>Previously, a bug was discovered during testing where searching with an empty string resulted in a wrongful error message being displayed in the application. This issue has now been successfully resolved.</p>
 <h2>Steps to Verify Resolution:</h2>
@@ -264,6 +271,7 @@
 <h2>"NOT" Operator Issue - Regression Test Failure</h2>
 <p>Date: 2023-04-24</p>
 <p>Time: 10:30 AM</p>
+<p>Tester Name: Siddartha Darisi</p>
 <h2>Issue Description:</h2>
 <p>During a manual regression test, it was observed that the News API search function was not properly handling the "NOT" operator in search queries.</p>
 <h2>Steps to Reproduce:</h2>
@@ -280,6 +288,7 @@
 <h2>"NOT" Operator Issue Fixed - Successful Regression Test</h2>
 <p>Date: 2023-04-24</p>
 <p>Time: 12:00 PM</p>
+<p>Tester Name: Siddartha Darisi</p>
 <h2>Issue Description:</h2>
 <p>A manual regression test revealed that the News API search function was not properly handling the "NOT" operator in search queries.</p>
 <h2>Fix Implementation:</h2>
@@ -397,6 +406,7 @@
 <h2>404 Error Issue - Failed Regression Test</h2>
 <p>Date: 2023-04-24</p>
 <p>Time: 4:00 PM</p>
+<p>Tester Name: Siddartha Darisi</p>
 <h2>Issue Description:</h2>
 <p>A manual regression test revealed that the News API search function is still not properly handling 404 errors returned by the API.</p>
 <h2>Current Implementation:</h2>
@@ -416,6 +426,7 @@
 <h2>404 Error Issue Fixed - Successful Regression Test</h2>
 <p>Date: 2023-04-24</p>
 <p>Time: 4:15 PM</p>
+<p>Tester Name: Siddartha Darisi</p>
 <h2>Issue Description:</h2>
 <p>A manual regression test revealed that the News API search function was not properly handling 404 errors returned by the API.</p>
 <h2>Fix Implementation:</h2>
