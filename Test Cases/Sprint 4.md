@@ -1,17 +1,49 @@
 <h1>Test Cases</h1>
 <h2>Front End Test</h2>
-Test sign up<br>
-Test sign in<br>
-Test set preferences<br>
-Test show merged articles<br>
-Test show category articles<br>
-Test searching<br>
-Test advanced searching<br>
-Search error<br>
-<h2>Back End Test</h2>
-Search test<br>
-catogerie test<br>
-Graph Ql test<br>
+<ol>
+  <li>Test sign up
+    <ul>
+      <li>Verify successful registration with valid email and password</li>
+      <li>Verify error messages for invalid email or password</li>
+      <li>Verify error message for duplicate email</li>
+    </ul>
+  </li>
+  <li>Test sign in
+    <ul>
+      <li>Verify successful login with valid email and password</li>
+      <li>Verify error messages for invalid email or password</li>
+    </ul>
+  </li>
+  <li>Test set preferences
+    <ul>
+      <li>Verify successful setting of preferences</li>
+      <li>Verify error messages for invalid preferences input</li>
+    </ul>
+  </li>
+  <li>Test show merged articles
+    <ul>
+      <li>Verify successful display of merged articles from different categories</li>
+    </ul>
+  </li>
+  <li>Test show category articles
+    <ul>
+      <li>Verify successful display of articles for a specific category</li>
+      <li>Verify that the content of the categories is reflected</li>
+    </ul>
+  </li>
+  <li>Test searching
+    <ul>
+      <li>Verify successful search results for valid search queries</li>
+      <li>Verify error messages or empty results for invalid search queries</li>
+    </ul>
+  </li>
+  <li>Test advanced searching
+    <ul>
+      <li>Verify successful advanced search results using multiple filters Like AND,OR, and ()</li>
+      <li>Verify error messages or empty results for invalid advanced search queries</li>
+    </ul>
+  </li>
+</ol>
 
 <h1>Test Report</h1>
 <h2>Sprint 2</h2>
