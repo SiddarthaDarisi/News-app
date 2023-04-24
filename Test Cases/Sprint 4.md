@@ -458,3 +458,22 @@
 
 
 
+<h2>Search Test- Successful Regression Test</h2>
+<p>Date: 2023-04-24</p>
+<p>Time: 4:55 PM</p>
+<p>Tester Name: Bhuvan Sai</p>
+<h2>Description:</h2>
+<p>Test if the search bar is working properly.</p>
+<h2>Steps:</h2>
+<ol>
+  <li>Launch the application.</li>
+  <li>Navigate to the search bar.</li>
+  <li>Search using a keyword</li>
+  <li>Search using AND OR & NOT functions</li>
+  <li>Search using AND OR & NOT.</li>
+</ol>
+<h2>Expected Result:</h2>
+<p>The sarch bar works with all the input without giving an error.</p>
+<h2>Actual Result:</h2>
+<p>The search bar works with a keyword giving results reguarding the input given. The search bar works properly with AND OR & NOT functions giving the appropriate output. The search bar ignored AND OR & NOT without any context.</p>
+
