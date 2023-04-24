@@ -1,3 +1,22 @@
+<h1>Test Cases</h1>
+<h2>Front End Test</h2>
+Test sign up<br>
+Test sign in<br>
+Test set preferences<br>
+Test show merged articles<br>
+Test show category articles<br>
+Test searching<br>
+Test advanced searching<br>
+Search error<br>
+<h2>Back End Test</h2>
+Search test<br>
+catogerie test<br>
+Graph Ql test<br>
+
+<h1>Test Report</h1>
+<h2>Sprint 2</h2>
+
+
 
 <br/>
 <h2>Search Capability with Keywords - Feature Test Success</h2>
