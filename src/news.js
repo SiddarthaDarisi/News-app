@@ -21,11 +21,12 @@ function News({ categories, searchQuery }) {
         let apiName;
         let path;
         let init;
-        let sanitizedQuery = searchQuery.replace(/NOT/g, "-");
-        sanitizedQuery = searchQuery.replace(/not/g, "-");
+        let sanitizedQuery 
         console.log(sanitizedQuery)
         try {
             if (searchQuery) {
+                sanitizedQuery = searchQuery.replace(/NOT/g, "-");
+                sanitizedQuery = searchQuery.replace(/not/g, "-");
                 apiName = 'searchapi';
                 path = '/search';
                 // Replace "NOT" with "-" symbol in search query
