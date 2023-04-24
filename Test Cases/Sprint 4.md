@@ -342,4 +342,44 @@
 <p>The news data is displayed in the field according to the selected catogerie.</p>
 <h2>Actual Result:</h2>
 <p>The data is succesfully displaye in the output field according to the catogrie that is input in the test field.</p>
+<br/>
+<h2>404 Error Issue - Failed Regression Test</h2>
+<p>Date: 2023-04-24</p>
+<p>Time: 4:00 PM</p>
+<h2>Issue Description:</h2>
+<p>A manual regression test revealed that the News API search function is still not properly handling 404 errors returned by the API.</p>
+<h2>Current Implementation:</h2>
+<p>The current implementation of the getNewsData() function in the frontend code does not handle 404 errors returned by the API properly. The code does not check for a 404 error status code in the API response, which can result in the application displaying incorrect search results when the News API is unable to fulfill a search request.</p>
+<h2>Steps to Verify:</h2>
+<ol>
+  <li>Launch the application.</li>
+  <li>Navigate to the "News" section.</li>
+  <li>Perform a search query that is expected to return a 404 error example: "google AND/OR".</li>
+  <li>Observe that the application does not display an error message indicating that the search failed.</li>
+</ol>
+<h2>Expected Result:</h2>
+<p>The application should handle 404 errors returned by the News API and display an error message indicating that the search failed.</p>
+<h2>Actual Result:</h2>
+<p>The application does not handle 404 errors returned by the News API and does not display an error message indicating that the search failed after performing the regression test. The issue has not been resolved successfully.</p>
+<br/>
+<h2>404 Error Issue Fixed - Successful Regression Test</h2>
+<p>Date: 2023-04-24</p>
+<p>Time: 4:15 PM</p>
+<h2>Issue Description:</h2>
+<p>A manual regression test revealed that the News API search function was not properly handling 404 errors returned by the API.</p>
+<h2>Fix Implementation:</h2>
+<p>An update was made to the getNewsData() function in the frontend code to handle 404 errors returned by the API. The code now checks for a 404 error status code in the API response and sets the "setSearchFailed" state to "true" if a 404 error is detected. This prevents the application from displaying incorrect search results when the News API is unable to fulfill a search request.</p>
+<h2>Steps to Verify:</h2>
+<ol>
+  <li>Launch the application.</li>
+  <li>Navigate to the "News" section.</li>
+  <li>Perform a search query that is expected to return a 404 error. example: "google AND/OR"</li>
+  <li>Observe that the application displays an error message indicating that the search failed.</li>
+</ol>
+<h2>Expected Result:</h2>
+<p>The application should handle 404 errors returned by the News API and display an error message indicating that the search failed.</p>
+<h2>Actual Result:</h2>
+<p>The application now properly handles 404 errors returned by the News API and displays an error message indicating that the search failed after performing the regression test. The issue has been resolved successfully.</p>
+
+
 
