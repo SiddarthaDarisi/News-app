@@ -457,7 +457,7 @@
 <p>The application now properly handles 404 errors returned by the News API and displays an error message indicating that the search failed after performing the regression test. The issue has been resolved successfully.</p>
 <br>
 
-
+<h3>Final Test</h3>
 <h2>Search Test- Successful Regression Test</h2>
 <p>Date: 2023-04-24</p>
 <p>Time: 4:55 PM</p>
