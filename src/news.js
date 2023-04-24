@@ -21,7 +21,7 @@ function News({ categories, searchQuery }) {
         let apiName;
         let path;
         let init;
-        let sanitizedQuery 
+        let sanitizedQuery
         console.log(sanitizedQuery)
         try {
             if (searchQuery) {
@@ -30,7 +30,7 @@ function News({ categories, searchQuery }) {
                 apiName = 'searchapi';
                 path = '/search';
                 // Replace "NOT" with "-" symbol in search query
-               
+
                 init = {
                     body: { searchQuery: sanitizedQuery }
                 };
@@ -52,6 +52,9 @@ function News({ categories, searchQuery }) {
             setTotalPages(Math.ceil(sortedArticles.length / articlesPerPage));
             setLoading(false);
         } catch (error) {
+            if (error.response && error.response.status === 404) {
+                setSearchFailed(true);
+            }
             console.error(error);
             setLoading(false);
         }

@@ -61,7 +61,7 @@ exports.handler = async (event) => {
         };
     } catch (error) {
         return {
-            statusCode: 500,
+            statusCode: 404,
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Headers": "Content-Type",
