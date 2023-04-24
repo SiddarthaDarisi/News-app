@@ -46,7 +46,7 @@
   </li>
 </ol>
 
-<h2>Front End Test</h2>
+<h2>Back End Test</h2>
 <p>Search Endpoint test</p>
 <p>Caterories end point test</p>
 
